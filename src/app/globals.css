@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* 
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+} */
+
+.flex-center {
+  @apply flex justify-center items-center;
+}
+.logo-font {
+  font-family: cursive;
+}
+.page-link {
+  @apply hover:underline font-bold  sm:mx-2 lg:mx-4;
+}
+/* client options icons style: search, favorites, and shopping cart */
+.client-options__icon {
+  @apply text-lg mr-4 cursor-pointer;
+}
+/* Hero section images style */
+.hero-bar {
+  @apply object-cover object-right w-full h-full;
+}
+/* buttons main style */
+.button {
+  @apply p-2 text-base font-extrabold border-2
+   border-black rounded-md my-4 mt-2 bg-black text-white
+   brightness-90 hover:brightness-100;
+}
