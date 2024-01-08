@@ -29,20 +29,7 @@ body {
 .flex-center {
   @apply flex justify-center items-center;
 }
-.logo-font {
-  font-family: cursive;
-}
-.page-link {
-  @apply hover:underline font-bold  sm:mx-2 lg:mx-4;
-}
-/* client options icons style: search, favorites, and shopping cart */
-.client-options__icon {
-  @apply text-lg mr-4 cursor-pointer;
-}
-/* Hero section images style */
-.hero-bar {
-  @apply object-cover object-right w-full h-full;
-}
+
 /* buttons main style */
 .button {
   @apply p-2 text-base font-extrabold border-2

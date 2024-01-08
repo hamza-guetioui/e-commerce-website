@@ -1,0 +1,68 @@
+.container {
+  @apply flex-col  w-full h-[calc(100vh-5rem)] p-2 md:flex-row lg:p-4 gap-3;
+}
+
+/* slidebar section stylesheet */
+.sildeBox {
+  @apply relative w-full h-1/2 bg-slate-300 overflow-hidden rounded-xl
+  sm:w-full sm:h-4/6  md:w-8/12 md:h-full;
+}
+.slideboxTitle {
+  @apply text-xl drop-shadow-xl font-black mb-2
+  sm:text-2xl 
+  md:text-3xl 
+  lg:text-5xl lg:mb-4;
+}
+.slideBoxDescription {
+  @apply leading-tight drop-shadow-2xl overflow-y-scroll text-xs font-bold h-14
+   md:h-20 mb-4 md:text-base lg:leading-relaxed;
+}
+
+/* Explore section elements stylesheet */
+.exploreContainer {
+  @apply flex-col w-full h-1/2 
+  sm:flex-row sm:w-full sm:h-2/6 
+  md:flex-col md:h-full md:w-4/12 gap-3;
+}
+.exploreBox {
+  @apply relative w-full h-1/2 bg-slate-300 overflow-hidden rounded-xl
+  sm:h-full sm:w-1/2 
+  md:h-1/2 md:w-full;
+}
+.exploreBoxTitle {
+  @apply text-xl drop-shadow-xl font-black mb-2 
+  lg:text-4xl lg:mb-4;
+}
+.exploreBoxDescription {
+  @apply leading-tight drop-shadow-2xl h-8 mb-2 overflow-y-scroll text-xs font-bold md:h-14 lg:text-lg lg:leading-relaxed;
+}
+
+/* boxes cover image & button */
+.boxImage {
+  @apply object-cover object-right w-full h-full;
+}
+.boxButton {
+  @apply p-2 text-xs font-extrabold border-2
+    border-black rounded-md bg-black text-white
+    brightness-75 hover:brightness-100 lg:text-base;
+}
+
+/* Description scroll stylesheet */
+.container p::-webkit-scrollbar {
+  width: 6px;
+  border-radius: 10px;
+  background-color: #7373731f;
+}
+
+/* thumb */
+.container p::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #cbc5c5d4;
+}
+/* Track */
+.container p::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #afafaf6b;
+}

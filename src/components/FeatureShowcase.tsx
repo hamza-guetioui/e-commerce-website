@@ -32,7 +32,7 @@ const data = [
 
 function FeatureShowcase() {
   return (
-    <div className="flex-center flex-wrap gap-2 lg:flex-nowrap w-full px-10 py-2 ">
+    <div className="hidden sm:flex-center sm:flex-wrap sm:gap-2 lg:flex-nowrap w-full px-10 py-2 ">
       {data.map(({ id, title, description, image }) => {
         return (
           <div key={id} className="flex items-center text-center flex-col basis-full sm:basis-[calc(50%-0.5rem)]  sm:text-left sm:flex-row lg:w-1/4 ">

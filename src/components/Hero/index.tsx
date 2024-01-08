@@ -1,17 +1,18 @@
-import Image from "next/image";
 import React from "react";
 import ExploreSection from "./ExploreSection";
 import Slidebar from "./Slidebar";
 
-function Index() {
+import styles from "./HeroStyles.module.css";
+
+function Hero() {
   return (
-    <div className="flex-center w-full h-[calc(100vh-5rem)] p-4 gap-3 ">
+    <div className={`flex-center ${styles.container}`}>
       {/* slidebar */}
       <Slidebar />
       {/*  ExploreSection: Curates items for user discovery and exploration */}
-      <ExploreSection className="flex-center flex-col gap-3 w-4/12 h-full"/>
+      <ExploreSection />
     </div>
   );
 }
 
-export default Index;
+export default Hero;

@@ -1,51 +1,47 @@
 import React from "react";
 import Image from "next/image";
 
-interface classProp extends React.HtmlHTMLAttributes<HTMLDivElement> {}
+import styles from "./HeroStyles.module.css";
 
-function ExploreSection({ className }: classProp) {
+function ExploreSection() {
   return (
-    <div className={className}>
-      <div className="relative w-full h-3/6">
+    <div className={`flex-center ${styles.exploreContainer}`}>
+      <div className={styles.exploreBox}>
         <Image
           src="/images/shoes.webp"
           alt="amazigh-shoes"
           width={1000}
           height={560}
-          className="hero-bar"
+          className={styles.boxImage}
         />
         <div
-          className="absolute top-1/2 -translate-y-1/2 p-8 mt-4"
-          style={{ maxWidth: "70%" }}
+          className="absolute top-1/2 -translate-y-1/2 p-8 lg:mt-4"
+          style={{ maxWidth: "75%" }}
         >
-          <h1 className="font-black text-3xl leading-8 mb-2">
-            {"Men's Shoes"}
-          </h1>
-          <p className="font-bold text-base leading-">
+          <h1 className={styles.exploreBoxTitle}>{"Men's Shoes"}</h1>
+          <p className={styles.exploreBoxDescription}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam sunt
           </p>
-          <button className="button">Discover Now</button>
+          <button className={styles.boxButton}>Discover Now</button>
         </div>
       </div>
-      <div className="relative w-full h-3/6">
+      <div className={styles.exploreBox}>
         <Image
           src="/images/jewelry.webp"
           alt="amazigh-jewelry"
           width={1000}
           height={560}
-          className="hero-bar"
+          className={styles.boxImage}
         />
         <div
-          className="absolute top-1/2 -translate-y-1/2 p-8 mt-4"
-          style={{ maxWidth: "70%" }}
+          className="absolute top-1/2 -translate-y-1/2 p-8 lg:mt-4"
+          style={{ maxWidth: "75%" }}
         >
-          <h1 className="font-black text-3xl leading-8 mb-2">
-            {"Women's Jewelry"}
-          </h1>
-          <p className="font-bold text-base leading-">
+          <h1 className={styles.exploreBoxTitle}>{"Women's Jewelry"}</h1>
+          <p className={`  ${styles.exploreBoxDescription} h-8 mb-2`}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam sunt
           </p>
-          <button className="button">Discover Now</button>
+          <button className={styles.boxButton}>Discover Now</button>
         </div>
       </div>
     </div>

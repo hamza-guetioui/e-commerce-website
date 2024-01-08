@@ -1,0 +1,10 @@
+.logoFont {
+  font-family: cursive;
+}
+.pageLink {
+  @apply hover:underline font-bold  sm:mx-2 lg:mx-4;
+}
+/* client options icons style: search, favorites, and shopping cart */
+.clientOptions__icon {
+  @apply text-lg mr-2 lg:mr-4 cursor-pointer;
+}

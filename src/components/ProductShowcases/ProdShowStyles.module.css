@@ -1,0 +1,26 @@
+.cardBox {
+  @apply rounded-xl overflow-hidden shadow-2xl;
+}
+.cardImage {
+  @apply object-cover object-right w-full max-w-full rounded-xl h-[55%];
+}
+.cardContent {
+  @apply p-3;
+}
+
+.cardTitle {
+  @apply font-bold mb-2 text-base;
+}
+.cardDescription {
+  @apply text-xs mb-2;
+}
+
+.cardInfo {
+  @apply text-left px-3 relative;
+}
+.cardPrice {
+    @apply font-bold 
+}
+.cardAdd {
+    @apply absolute right-0 bottom-0 h-full w-12
+}
