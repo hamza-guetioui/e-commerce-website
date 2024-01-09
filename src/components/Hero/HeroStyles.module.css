@@ -1,11 +1,13 @@
 .container {
-  @apply flex-col  w-full h-[calc(100vh-5rem)] p-2 md:flex-row lg:p-4 gap-3;
+  @apply flex-col w-full h-[calc(100vh-5rem)] p-2 rounded-bl-lg rounded-br-lg 
+lg:flex-row lg:p-4 gap-3 mb-12;
 }
 
 /* slidebar section stylesheet */
 .sildeBox {
   @apply relative w-full h-1/2 bg-slate-300 overflow-hidden rounded-xl
-  sm:w-full sm:h-4/6  md:w-8/12 md:h-full;
+  sm:w-full sm:h-4/6 
+  lg:w-8/12 lg:h-full;
 }
 .slideboxTitle {
   @apply text-xl drop-shadow-xl font-black mb-2
@@ -15,19 +17,20 @@
 }
 .slideBoxDescription {
   @apply leading-tight drop-shadow-2xl overflow-y-scroll text-xs font-bold h-14
-   md:h-20 mb-4 md:text-base lg:leading-relaxed;
+   md:h-20 mb-4 md:text-base
+  lg:leading-relaxed;
 }
 
 /* Explore section elements stylesheet */
 .exploreContainer {
   @apply flex-col w-full h-1/2 
   sm:flex-row sm:w-full sm:h-2/6 
-  md:flex-col md:h-full md:w-4/12 gap-3;
+  lg:flex-col lg:h-full lg:w-4/12 gap-3;
 }
 .exploreBox {
   @apply relative w-full h-1/2 bg-slate-300 overflow-hidden rounded-xl
   sm:h-full sm:w-1/2 
-  md:h-1/2 md:w-full;
+  lg:h-1/2 lg:w-full;
 }
 .exploreBoxTitle {
   @apply text-xl drop-shadow-xl font-black mb-2 

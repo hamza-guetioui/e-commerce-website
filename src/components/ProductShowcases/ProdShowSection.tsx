@@ -1,5 +1,8 @@
-import React from "react";
+"use client";
+import React, { useRef } from "react";
+import styles from "./ProdShowStyles.module.css";
 import Card from "./Card";
+import ScrollController from "./ScrollController";
 
 const products = [
   {
@@ -59,17 +62,47 @@ const products = [
     price: "349.00 MAD",
   },
 ];
+type ProdShowProps = {
+  title: string;
+};
+function ProdShowSection({ title }: ProdShowProps) {
+  const scrollRef = useRef<HTMLDivElement>(null);
 
-function ProdShowSection() {
+  function scrollProducts(scrollTo: string): void {
+    if (scrollRef.current) {
+      console.log(scrollRef.current.scrollLeft, scrollTo);
+      switch (scrollTo) {
+        case "btnScrollRight":
+          scrollRef.current.scrollLeft += 400;
+          break;
+
+        case "btnScrollLeft":
+          scrollRef.current.scrollLeft -= 400;
+          break;
+      }
+    }
+  }
+
   return (
-    <div>
-      <div>
-        <h2 className="text-center my-5">Product Showcase</h2>
+    <div className="mb-8">
+      <div className="flex items-center justify-between mb-3 px-4 lg:px-20 ">
+        <ScrollController scroll={scrollProducts} />
+        <h2 className={styles.sectionTitle}>{title}</h2>
       </div>
-      <div className="flex overflow-x-scroll max-w-full p-4 gap-4">
+      <div
+        ref={scrollRef}
+        className="flex items-center w-full p-1 gap-3 overflow-x-scroll md:overflow-x-hidden scroll-smooth md:w-[95%] md:m-auto md:shadow-md"
+      >
         {products.map(({ id, ...data }) => {
           return <Card key={id} {...data} />;
         })}
+      </div>
+      <div className="text-center mt-3">
+        <button
+          className={`${styles.moreBtn} before:w-[calc(100%*5)] after:w-[calc(100%*5)] `}
+        >
+          more
+        </button>
       </div>
     </div>
   );

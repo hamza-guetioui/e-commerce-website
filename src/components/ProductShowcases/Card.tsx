@@ -12,7 +12,7 @@ interface CardProps {
 function Card({ title, description, imageSrc, price }: CardProps) {
   return (
     <div
-      className={`${styles.cardBox}  min-w-[50%] sm:min-w-[30%] md:min-w-[19%] lg:min-w-[15%]`}
+      className={`${styles.cardBox}  min-w-[40%] sm:min-w-[30%] md:min-w-[19%] lg:min-w-[15%]`}
     >
       <Image
         className={styles.cardImage}

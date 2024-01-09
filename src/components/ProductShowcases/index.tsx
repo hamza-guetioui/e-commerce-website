@@ -4,7 +4,8 @@ import ProdShowSection from "./ProdShowSection";
 function ProductShowcases() {
   return (
     <div>
-      <ProdShowSection />
+      <ProdShowSection title={"Trending"}/>
+      <ProdShowSection title={"New Collection"}/>
     </div>
   );
 }

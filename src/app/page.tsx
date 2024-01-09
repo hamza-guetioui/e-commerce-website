@@ -7,6 +7,7 @@ import {
   Hero,
   FeatureShowcase,
   ProductShowcases,
+  StoriesSection
 } from "@/components";
 
 
@@ -19,7 +20,8 @@ export default function Home() {
       {/* ValueCards Component: Displays four cards highlighting provided values or services */}
       <FeatureShowcase />
       <ProductShowcases />
-      <ProductShowcases />
+      <StoriesSection />
+      
       
     </main>
   );

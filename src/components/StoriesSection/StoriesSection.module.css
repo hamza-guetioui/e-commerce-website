@@ -1,0 +1,35 @@
+.sectionScrollBtn {
+  @apply flex justify-center items-center border-2 border-black p-2 rounded-full w-8 h-8
+    lg:w-10 lg:h-10;
+}
+.container {
+  @apply flex items-center lg:ml-32;
+}
+.introBox {
+  @apply w-64 min-w-64 p-4 mr-4 ;
+}
+.introTitle {
+  @apply leading-7 font-bold mb-4;
+}
+.introDescription {
+  @apply text-base font-normal mb-4;
+}
+
+ /* Stories Section Cards stylesheet */
+.cardBox {
+    @apply min-w-36 w-36 relative;
+  }
+  .cardImage {
+    @apply object-cover w-full max-w-full h-full ;
+  }
+  .cardContent {
+    @apply  absolute left-4 bg-red-200 p-2;
+  }
+  .cardContentTitle {
+    @apply font-black mb-2 text-base;
+  }
+  .cardContentDescription {
+    @apply text-xs;
+  }
+  
+ 
