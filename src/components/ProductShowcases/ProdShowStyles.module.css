@@ -23,10 +23,10 @@
 }
 
 .cardBox {
-  @apply relative rounded-xl overflow-hidden shadow-2xl  lg:h-80;
+  @apply relative rounded-xl overflow-hidden shadow-2xl brightness-75 hover:brightness-100 lg:h-80;
 }
 .cardImage {
-  @apply object-cover w-full max-w-full h-[50%] rounded-xl;
+  @apply object-cover w-full max-w-full h-[50%] rounded-xl ;
 }
 .cardContent {
   @apply p-4 pb-4;

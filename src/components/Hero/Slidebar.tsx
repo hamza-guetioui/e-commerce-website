@@ -2,8 +2,9 @@
 import React from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 import "swiper/css/bundle";
 
@@ -13,12 +14,13 @@ function Slidebar() {
   return (
     <div className={styles.sildeBox}>
       <Swiper
-        modules={[Autoplay, Pagination]}
+        modules={[Autoplay, Pagination, Navigation]}
         className="h-full w-full"
         spaceBetween={0}
         slidesPerView={1}
-        speed={3000}
+        speed={2000}
         pagination={{ clickable: true }}
+        navigation={false}
         loop={true}
         autoplay={{ delay: 3000 }}
       >
@@ -30,15 +32,12 @@ function Slidebar() {
             height={568}
             className={styles.boxImage}
           />
-          <div
-            className="absolute top-1/2 -translate-y-1/2 px-8 lg:mt-4"
-            style={{ maxWidth: "70%" }}
-          >
+          <div className="absolute top-1/2 -translate-y-1/2 px-8 lg:mt-4 max-w-[60%]">
             <h1 className={styles.slideboxTitle}>Traditional Amazigh Dress</h1>
             <p className={styles.slideBoxDescription}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam sunt
               vel at reiciendis numquam consequuntur quas, nobis dolorem beatae
-              provident? Nam, sed dolor at neque distinctio in esse temporibus.
+              provident.
             </p>
             <button className={styles.boxButton}>Discover Now</button>
           </div>
@@ -51,15 +50,12 @@ function Slidebar() {
             height={568}
             className={styles.boxImage}
           />
-          <div
-            className="absolute top-1/2 -translate-y-1/2 px-8 lg:mt-4"
-            style={{ maxWidth: "70%" }}
-          >
+          <div className="absolute top-1/2 -translate-y-1/2 px-8 lg:mt-4 max-w-[60%]">
             <h1 className={styles.slideboxTitle}>Traditional Amazigh Dress</h1>
             <p className={styles.slideBoxDescription}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam sunt
               vel at reiciendis numquam consequuntur quas, nobis dolorem beatae
-              provident? Nam, sed dolor at neque distinctio in esse temporibus.
+              provident.
             </p>
             <button className={styles.boxButton}>Discover Now</button>
           </div>
@@ -72,15 +68,12 @@ function Slidebar() {
             height={568}
             className={styles.boxImage}
           />
-          <div
-            className="absolute top-1/2 -translate-y-1/2 px-8 lg:mt-4"
-            style={{ maxWidth: "70%" }}
-          >
+          <div className="absolute top-1/2 -translate-y-1/2 px-8 lg:mt-4 max-w-[60%]">
             <h1 className={styles.slideboxTitle}>Traditional Amazigh Dress</h1>
             <p className={styles.slideBoxDescription}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam sunt
               vel at reiciendis numquam consequuntur quas, nobis dolorem beatae
-              provident? Nam, sed dolor at neque distinctio in esse temporibus.
+              provident.
             </p>
             <button className={styles.boxButton}>Discover Now</button>
           </div>

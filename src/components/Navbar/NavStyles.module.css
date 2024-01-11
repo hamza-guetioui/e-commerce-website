@@ -1,6 +1,16 @@
 .logoFont {
   font-family: cursive;
 }
+.navContainer {
+ @apply text-left basis-full text-2xl order-1 md:hidden md:basis-auto
+}
+.nav{
+ @apply absolute left-0 shadow-2xl rounded-md top-[90%] w-1/2 bg-slate-300 
+ md:flex md:justify-evenly order-2 md:static md:bg-transparent 
+}
+.linkWrapper {
+ @apply p-3 border-b last:border-none md:p-0 md:border-none
+}
 .pageLink {
   @apply hover:underline font-bold  sm:mx-2 lg:mx-4;
 }

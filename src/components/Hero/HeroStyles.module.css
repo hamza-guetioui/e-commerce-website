@@ -16,9 +16,10 @@ lg:flex-row lg:p-4 gap-3 mb-12;
   lg:text-5xl lg:mb-4;
 }
 .slideBoxDescription {
-  @apply leading-tight drop-shadow-2xl overflow-y-scroll text-xs font-bold h-14
+  @apply leading-tight drop-shadow-2xl text-xs font-bold h-14
    md:h-20 mb-4 md:text-base
   lg:leading-relaxed;
+  overflow : overlay
 }
 
 /* Explore section elements stylesheet */
@@ -34,15 +35,17 @@ lg:flex-row lg:p-4 gap-3 mb-12;
 }
 .exploreBoxTitle {
   @apply text-xl drop-shadow-xl font-black mb-2 
-  lg:text-4xl lg:mb-4;
+  lg:text-4xl;
 }
 .exploreBoxDescription {
-  @apply leading-tight drop-shadow-2xl h-8 mb-2 overflow-y-scroll text-xs font-bold md:h-14 lg:text-lg lg:leading-relaxed;
+  @apply leading-tight drop-shadow-2xl h-8 mb-2 overflow-y-scroll text-xs font-bold 
+  md:h-14 lg:text-lg lg:leading-relaxed;
+  overflow : overlay
 }
 
 /* boxes cover image & button */
 .boxImage {
-  @apply object-cover object-right w-full h-full;
+  @apply object-cover object-right w-full h-full opacity-90;
 }
 .boxButton {
   @apply p-2 text-xs font-extrabold border-2
