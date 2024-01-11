@@ -1,13 +1,55 @@
+.sectionContainer {
+  @apply mb-8
+}
+.sectionHeader {
+  @apply flex items-center justify-between mb-3 px-4 sm:px-8 lg:px-20
+}
+
 .sectionScrollBtn {
   @apply flex justify-center items-center border-2 border-black p-2 rounded-full w-8 h-8
-  lg:w-10 lg:h-10 ;
+  lg:w-10 lg:h-10;
 }
 .sectionTitle {
-  @apply text-lg font-bold tracking-tight relative w-56 text-slate-400
+  @apply text-lg font-bold tracking-tight relative w-32 lg:w-56 text-slate-400
   before:content-[""] before:absolute before:inset-y-0 before:left-0 before:w-1/3 before:h-[2px]
    before:bg-slate-400 before:rounded-md before:top-1/2 
    before:transform before:-translate-y-1/2 before:-translate-x-[calc(100%+0.25rem)]
    lg:text-3xl lg:before:h-[3px];
+}
+
+  .cardsContainer {
+  @apply mx-auto grid gap-4 overflow-x-scroll p-3 scroll-smooth
+  md:overflow-x-hidden  md:m-auto md:shadow-sm;
+}
+
+.cardBox {
+  @apply relative rounded-xl overflow-hidden shadow-2xl  lg:h-80;
+}
+.cardImage {
+  @apply object-cover w-full max-w-full h-[50%] rounded-xl;
+}
+.cardContent {
+  @apply p-4 pb-4;
+}
+.cardTitle {
+  @apply font-bold mb-2 text-xs 
+  sm:text-xl 
+  md:text-2xl
+  lg:text-lg ;
+}
+.cardDescription {
+  @apply text-xs mb-2 max-h-12 overflow-hidden 
+  md:max-h-20 md:text-xl 
+  lg:text-base;
+}
+.cardPrice {
+  @apply font-bold text-xs md:text-xl lg:text-sm;
+}
+.cardHeart {
+  @apply absolute top-2 right-2 text-xl md:text-2xl text-slate-100 bg-slate-300 rounded-full p-2 bg-opacity-75
+}
+.cardCart {
+  @apply absolute text-xs bg-slate-500 bg-opacity-25 bottom-0 right-0 w-8 h-4 p-2
 }
 .moreBtn {
   @apply text-xl  tracking-tight relative lg:text-2xl
@@ -20,30 +62,4 @@
    after:bg-slate-300 after:rounded-md after:top-1/2 
    after:transform after:-translate-y-1/2 after:translate-x-[calc(100%+0.25rem)]
    lg:after:h-[3px];
-}
-
-.cardBox {
-  @apply rounded-xl overflow-hidden shadow-2xl;
-}
-.cardImage {
-  @apply object-cover w-full max-w-full rounded-xl h-[55%];
-}
-.cardContent {
-  @apply p-3;
-}
-.cardTitle {
-  @apply font-bold mb-2 text-base;
-}
-.cardDescription {
-  @apply text-xs mb-2;
-}
-
-.cardInfo {
-  @apply text-left px-3 relative;
-}
-.cardPrice {
-  @apply font-bold;
-}
-.cardAdd {
-  @apply absolute right-0 bottom-0 h-full w-12;
 }

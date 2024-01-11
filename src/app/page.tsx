@@ -1,15 +1,14 @@
-// import Topbar from '@/components/Topbar'
-
-import Image from "next/image";
 import {
   Topbar,
   Navbar,
   Hero,
   FeatureShowcase,
   ProductShowcases,
-  StoriesSection
+  StoriesSection,
+  OfferBox,
+  AboutUs,
+  Footer,
 } from "@/components";
-
 
 export default function Home() {
   return (
@@ -21,8 +20,9 @@ export default function Home() {
       <FeatureShowcase />
       <ProductShowcases />
       <StoriesSection />
-      
-      
+      <OfferBox />
+      <AboutUs />
+      <Footer />
     </main>
   );
 }

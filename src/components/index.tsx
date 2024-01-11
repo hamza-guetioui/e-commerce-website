@@ -4,6 +4,9 @@ import Hero from "./Hero";
 import FeatureShowcase from "./FeatureShowcase";
 import ProductShowcases from "./ProductShowcases";
 import StoriesSection from "./StoriesSection";
+import OfferBox from "./OfferBox";
+import AboutUs from "./AboutUs";
+import Footer from "./Footer";
 
 export {
   Topbar,
@@ -12,4 +15,7 @@ export {
   FeatureShowcase,
   ProductShowcases,
   StoriesSection,
+  OfferBox,
+  AboutUs,
+  Footer
 };

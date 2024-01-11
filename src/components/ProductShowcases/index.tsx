@@ -3,7 +3,7 @@ import ProdShowSection from "./ProdShowSection";
 
 function ProductShowcases() {
   return (
-    <div>
+    <div className="mb-16">
       <ProdShowSection title={"Trending"}/>
       <ProdShowSection title={"New Collection"}/>
     </div>

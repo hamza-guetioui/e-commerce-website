@@ -3,27 +3,30 @@
     lg:w-10 lg:h-10;
 }
 .container {
-  @apply flex items-center lg:ml-32;
+  @apply flex mb-8 ml-4 lg:ml-32;
 }
 .introBox {
-  @apply w-64 min-w-64 p-4 mr-4 ;
+  @apply   min-w-36 md:w-64 md:min-w-64 p-4 mr-2 sm:mr-4 ;
 }
 .introTitle {
   @apply leading-7 font-bold mb-4;
 }
 .introDescription {
-  @apply text-base font-normal mb-4;
+  @apply text-xs md:text-base font-normal mb-4;
 }
 
  /* Stories Section Cards stylesheet */
+ .cardsContainer {
+  @apply flex items-center overflow-x-scroll md:overflow-x-hidden scroll-smooth
+ }
 .cardBox {
-    @apply min-w-36 w-36 relative;
+    @apply w-48 min-w-48 h-full mr-8 relative;
   }
   .cardImage {
-    @apply object-cover w-full max-w-full h-full ;
+    @apply object-cover object-top w-full max-w-full h-full ;
   }
   .cardContent {
-    @apply  absolute left-4 bg-red-200 p-2;
+    @apply absolute left-4 -right-4 bottom-0 bg-slate-100 p-2 shadow-md ;
   }
   .cardContentTitle {
     @apply font-black mb-2 text-base;

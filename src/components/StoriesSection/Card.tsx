@@ -12,7 +12,7 @@ interface CardProps {
 function Card({ name, image, story }: CardProps) {
   return (
     <div className={styles.cardBox}>
-      <div className="w-full h-full">
+      <div className="w-full h-4/5">
         <Image
           className={styles.cardImage}
           src={`/images/${image}`}
@@ -22,8 +22,8 @@ function Card({ name, image, story }: CardProps) {
         />
       </div>
       <div className={styles.cardContent}>
-        <h1 className={styles.cardTitleContent}>{name}</h1>
-        <p className={styles.cardDescriptionContent}>{story}</p>
+        <h1 className={styles.cardContentTitle}>{name}</h1>
+        <p className={styles.cardContentDescription}>{story}</p>
       </div>
     </div>
   );

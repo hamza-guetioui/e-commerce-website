@@ -2,6 +2,10 @@ import React from "react";
 import styles from "./ProdShowStyles.module.css";
 import Image from "next/image";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import  { faHeart } from "@fortawesome/free-regular-svg-icons";
+import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
+
 interface CardProps {
   title: string;
   imageSrc?: string;
@@ -11,23 +15,21 @@ interface CardProps {
 
 function Card({ title, description, imageSrc, price }: CardProps) {
   return (
-    <div
-      className={`${styles.cardBox}  min-w-[40%] sm:min-w-[30%] md:min-w-[19%] lg:min-w-[15%]`}
-    >
+    <div className={styles.cardBox}>
+      <FontAwesomeIcon icon={faHeart} className={styles.cardHeart}/>
+      <FontAwesomeIcon icon={faCartPlus} className={styles.cardCart}/>
       <Image
         className={styles.cardImage}
         src={`/images/${imageSrc}`}
         alt="Card image"
-        width={400}
-        height={400}
+        width={300}
+        height={300}
       />
       <div className={styles.cardContent}>
-        <h1 className={styles.cardTitle}>{`${title.slice(0 , 11)}...`}</h1>
-        <p className={styles.cardDescription}>{ description }</p>
-      </div>
-      <div className={styles.cardInfo}>
-        <div className={styles.cardPrice}>{price}</div>
-        <button className={styles.cardAdd}>add</button>
+      
+        <h1 className={styles.cardTitle}>{title}</h1>
+        <p className={styles.cardDescription}>{description}</p>
+        <span className={styles.cardPrice}>{price}</span>
       </div>
     </div>
   );
