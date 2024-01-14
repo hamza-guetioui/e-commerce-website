@@ -1,0 +1,77 @@
+
+ /* categories Section Styles */
+.categoriesContainer {
+    @apply col-span-3 border rounded-lg h-fit p-2 bg-slate-300/95
+}
+
+ /* Products Section Styles */
+.productsContainer {
+@apply grid grid-cols-4 gap-4 scroll-smooth col-span-7
+}
+
+ /* Ad Section Styles */
+.adSidebar {
+    @apply col-span-2 w-full h-full bg-green-500
+}
+
+
+
+.linkWrapper {
+    @apply relative p-3 border-b last:border-none md:p-0 md:border-none
+   }
+   .pageLink {
+     @apply flex items-center hover:underline font-bold
+     sm:mx-2 
+     md:justify-start 
+     lg:mx-4;
+   }
+   
+    /* Drop Menu Styles  */
+   .dropDownMenu {
+     @apply absolute px-4 pb-4 top-0 left-full w-[calc(100%+1rem)] hidden text-gray-700 rounded-md  bg-slate-300/95 
+     md:top-[95%] md:left-8 md:w-56 ;
+          
+   }
+   .subMenuGroup {
+     @apply text-xs font-bold ml-3
+   }
+   .moreLinkWrapper {
+     @apply relative p-2 border-b last:border-none
+    }
+   .categoryLinkWrapper {
+     @apply flex items-center hover:underline font-bold ml-3 border-b last:border-none text-sm
+     sm:mx-2 
+     lg:mx-4 lg:p-1;
+   }
+
+
+ /* Card Styles */
+  .cardBox {
+    @apply relative col-span-1 rounded-xl overflow-hidden shadow-2xl brightness-75 hover:brightness-100 lg:h-80;
+  }
+  .cardImage {
+    @apply object-cover w-full max-w-full h-[50%] rounded-xl ;
+  }
+  .cardContent {
+    @apply p-4 pb-4;
+  }
+  .cardTitle {
+    @apply font-bold mb-2 text-xs 
+    sm:text-xl 
+    md:text-2xl
+    lg:text-lg ;
+  }
+  .cardDescription {
+    @apply text-xs mb-2 max-h-12 overflow-hidden 
+    md:max-h-20 md:text-xl 
+    lg:text-base;
+  }
+  .cardPrice {
+    @apply font-bold text-xs md:text-xl lg:text-sm;
+  }
+  .cardHeart {
+    @apply absolute top-2 right-2 text-xl md:text-2xl text-slate-100 bg-slate-300 rounded-full p-2 bg-opacity-75
+  }
+  .cardCart {
+    @apply absolute text-xs bg-slate-500 bg-opacity-25 bottom-0 right-0 w-8 h-4 p-2
+  }

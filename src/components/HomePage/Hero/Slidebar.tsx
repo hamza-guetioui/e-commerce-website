@@ -27,6 +27,7 @@ function Slidebar() {
         <SwiperSlide>
           <Image
             src="/images/clothes.webp"
+            priority={true}
             alt="amazigh-clothes"
             width={945}
             height={568}
@@ -45,6 +46,7 @@ function Slidebar() {
         <SwiperSlide>
           <Image
             src="/images/jewelry.webp"
+            priority={true}
             alt="amazigh-clothes"
             width={945}
             height={568}
@@ -63,6 +65,7 @@ function Slidebar() {
         <SwiperSlide>
           <Image
             src="/images/shoes.webp"
+            priority={true}
             alt="amazigh-clothes"
             width={945}
             height={568}

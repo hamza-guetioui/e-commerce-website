@@ -85,23 +85,27 @@ function ProdShowSection({ title }: ProdShowProps) {
 
   return (
     <div className={styles.sectionContainer}>
+      
       <div className={ styles.sectionHeader}>
         <ScrollController scroll={scrollProducts} />
         <h2 className={styles.sectionTitle}>{title}</h2>
       </div>
+
       <div ref={scrollRef} className={` ${styles.cardsContainer} md:w-[95%] m-auto 
       grid-cols-[repeat(8,40%)] sm:grid-cols-[repeat(8,20%)] lg:grid-cols-[repeat(8,15%)]  `}>
         {products.map(({ id, ...data }) => {
           return <Card key={id} {...data} />;
         })}
       </div>
-      <div className="text-center mt-3">
-        {/* <button
+
+
+      {/* <div className="text-center mt-3">
+        <button
           className={`${styles.moreBtn} before:w-[calc(100%*5)] after:w-[calc(100%*5)] `}
         >
           more
-        </button> */}
-      </div>
+        </button>
+      </div> */}
     </div>
   );
 }

@@ -1,0 +1,44 @@
+.logoFont {
+  font-family: cursive;
+}
+
+/* Navbar Styles */
+.navContainer {
+ @apply text-left basis-full text-2xl order-1 md:hidden md:basis-auto
+}
+.nav{
+ @apply absolute left-0 rounded-md top-[90%] w-2/5 bg-slate-300 
+ md:flex md:justify-evenly order-2 md:static md:bg-transparent 
+}
+.linkWrapper {
+ @apply relative p-3 border-b last:border-none md:p-0 md:border-none
+}
+.pageLink {
+  @apply flex items-center hover:underline font-bold
+  sm:mx-2 
+  md:justify-start 
+  lg:mx-4;
+}
+
+ /* Drop Menu Styles  */
+.dropDownMenu {
+  @apply absolute px-4 pb-4 top-0 left-full w-[calc(100%+1rem)] hidden text-gray-700 rounded-md  bg-slate-300/95 
+  md:top-[95%] md:left-8 md:w-56 ;
+       
+}
+.subMenuGroup {
+  @apply text-xs font-bold
+}
+.moreLinkWrapper {
+  @apply relative p-2 border-b last:border-none
+ }
+.categoryLinkWrapper {
+  @apply flex items-center hover:underline font-bold ml-3 border-b last:border-none text-sm
+  sm:mx-2 
+  lg:mx-4 lg:p-1;
+}
+
+/*Client Options Section Styles */
+.clientOptions__icon {
+  @apply text-lg mr-2 lg:mr-4 cursor-pointer;
+}
