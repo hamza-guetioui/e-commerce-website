@@ -13,7 +13,7 @@ const products = [
   {
     id: 2,
     title: "women's shoes",
-    description: "dolor sit officiis corrupti saepe drivn ou fhumk daugh",
+    description: "dolor sit officiis corrupti saepe drivn ou fhumk.",
     imageSrc: "card2.jpg",
     price: "349 MAD",
   },

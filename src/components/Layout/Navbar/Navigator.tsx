@@ -29,7 +29,7 @@ function Navigator({ isMenuOpen, setIsMenuOpen }: navProps) {
             <li key={page.name} className={`${styles.linkWrapper} group`}>
               {page.name === "Categories" ? (
                 <>
-                  <Link href={"#"} className={styles.pageLink}>
+                  <Link href={"/products"} className={styles.pageLink}>
                     {page.name}
                     <FontAwesomeIcon
                       icon={faAngleDown}
