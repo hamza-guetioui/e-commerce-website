@@ -98,7 +98,7 @@ export const NavigationPages: NavigationPages[] = [
     options: categoriesOptions,
   },
   {
-    name: "Shop",
+    name: "Store",
     path: "/products",
   },
   {
@@ -118,7 +118,7 @@ export const NavigationPages: NavigationPages[] = [
       },
       {
         name: "About Us",
-        path: "/aboutUs",
+        path: "/about",
       },
       {
         name: "FAQ's",

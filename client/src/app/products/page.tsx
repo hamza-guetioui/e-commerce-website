@@ -3,7 +3,7 @@ import {
   Categories,
   ProductsSection,
   AdSidebar,
-} from "@/components/ShopSection";
+} from "@/components/Products_Page";
 
 
 function Products() {

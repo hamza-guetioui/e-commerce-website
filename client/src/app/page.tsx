@@ -5,7 +5,7 @@ import {
   StoriesSection,
   OfferBox,
   AboutUs,
-} from "@/components/HomePage";
+} from "@/components/Home_Page";
 
 export default function Home() {
   return (
