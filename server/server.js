@@ -1,47 +1,36 @@
-require('dotenv').config()
+require('dotenv').config();
+
 const express = require('express');
+const cors = require('cors');
+const path = require('path');
+
 const app = express();
-const cors = require('cors')
-const db = require('./db')
-
-const port = process.env.PORT || 8000
-
-app.use((req, res, next) => {
-    req.db = db
-    next()
-})
-
-const productRouters = require('./router/productRouters')
-
-app.use('/products', productRouters)
-
-// const mysql = require('mysql')
-// const con = mysql.createConnection({
-//     host: process.env.DB_HOST,
-//     user: process.env.DB_USER,
-//     password: process.env.DB_PASSWORD,
-//     database: process.env.DB_NAME
-
-// })
-// con.connect((err) => {
-//     if (err) throw err;
-//     console.log("Connected!")
-// });
-
-
-
-
-
+const port = process.env.PORT || 8000;
 
 app.use(cors({
     origin: 'http://localhost:3000',
     optionsSuccessStatus: 200
-}))
+}));
 
-app.get('/', (req, res) => {
-    res.json({ "message": "Here We GO  Again !" })
+// Serving static files 
+app.use(express.static("public"))
+app.use('/images', express.static(path.join(__dirname, 'images')));
+
+// Import database 
+const db = require('./db');
+app.use((req, res, next) => {
+    req.db = db;
+    next();
 });
 
+// Routers 
+const productRouters = require('./router/productRouters');
+app.use('/', productRouters);
 
+app.get('/', (req, res) => {
+    res.json({ "message": "Here We GO  Again !" });
+});
 
-app.listen(port, () => console.log(`server started on port ${port} !`))
+app.listen(port, () => {
+    console.log(`Server started on port ${port}!`);
+});
