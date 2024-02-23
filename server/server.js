@@ -16,21 +16,34 @@ app.use(cors({
 app.use(express.static("public"))
 app.use('/images', express.static(path.join(__dirname, 'images')));
 
-// Import database 
-const db = require('./db');
-app.use((req, res, next) => {
-    req.db = db;
-    next();
-});
+// const User = require('./models/user')
 
+// Import database 
+const Category = require('./models/Category');
+const User = require('./models/User')
+const sequelize = require('./utils/database');
+
+sequelize.sync().then((res) => {
+    console.log(res)
+}).catch(err => {
+    if (err) throw err
+})
+
+
+app.get('/catg', async (req, res) => {
+    try {
+        const data = await Category.findAll()
+        res.json(data)
+
+    } catch (err) {
+        if (err) throw err
+    }
+})
 // Routers 
-const productRouters = require('./router/productRouters');
+const productRouters = require('./router/productsRouter');
 app.use('/', productRouters);
 
-app.get('/', (req, res) => {
-    res.json({ "message": "Here We GO  Again !" });
-});
 
-app.listen(port, () => {
+app.listen(port, async () => {
     console.log(`Server started on port ${port}!`);
 });
