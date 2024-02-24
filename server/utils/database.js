@@ -6,8 +6,9 @@ const sequelize = new Sequelize(
     process.env.DB_USER, // Username
     process.env.DB_PASSWORD, // Password
     {
-        host: process.env.DB_HOST,
-        dialect: 'mysql'
-    }
+        host: process.env.DB_HOST, // Database  host
+        dialect: 'mysql' // Type of database 
+    },
+    // { query: { raw: true } }
 );
-module.exports = sequelize;
+module.exports = sequelize; 

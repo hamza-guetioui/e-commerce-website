@@ -13,11 +13,15 @@ const User = sequelize.define("user", {
         type: DataTypes.STRING,
         allowNull: false
     }
+
+},{
+    paranoid: true,
+    deleteAt: "destroyTime"
+
 })
 
 module.exports = User;
 
-    
 
-    
-    
+
+

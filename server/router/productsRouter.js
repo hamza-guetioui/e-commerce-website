@@ -3,7 +3,7 @@ const router = express.Router()
 
 // const { Category } = require('../models')
 
-const { getCategories,
+const { 
     getAllProducts,
     addProduct,
     getProductById,
