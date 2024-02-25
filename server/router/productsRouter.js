@@ -2,36 +2,20 @@ const express = require('express')
 const router = express.Router()
 
 // const { Category } = require('../models')
+const Products = require('../controller/Products');
 
-const { 
-    getAllProducts,
-    addProduct,
-    getProductById,
-    updateProduct,
-    deleteProduct,
-    productImage
-} = require('../controller/productsController');
-
-// route.get('/',(req,res) =>{
-//     try{
-//         const result = new Car
-
-//     }catch (err){
-//         if(err) throw err
-//     }
-// })
 
 // router.get('/products/categories', getCategories);
-router.get('/products/image', productImage)
+router.get('/products/image', Products.productImage)
 
-router.get('/products', getAllProducts);
+router.get('/products', Products.getAllProducts);
 
-router.post('/products/create', addProduct);
+router.post('/products/create', Products.addProduct);
 
 router.route('/products/:id')
-    .get(getProductById)
-    .put(updateProduct)
-    .delete(deleteProduct);
+    .get(Products.getProductById)
+    .put(Products.updateProduct)
+    .delete(Products.deleteProduct);
 
 
 

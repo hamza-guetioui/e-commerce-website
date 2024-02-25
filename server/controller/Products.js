@@ -84,7 +84,6 @@ const productImage = (req, res) => {
 }
 
 module.exports = {
-    
     getAllProducts,
     addProduct,
     getProductById,
