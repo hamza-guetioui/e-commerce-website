@@ -10,7 +10,17 @@ const Color = sequelize.define("color", {
     colorName: {
         type: DataTypes.STRING(50),
         allowNull: false,
-        unique: true
+        unique: true ,
+        validate: {
+            is: {
+                args: /^[a-zA-Z]+[a-zA-Z\s]*$/,
+                msg: "Color name can only contain letters."
+            },
+            isEmpty: {
+                args: false,
+                msg: "Color name cannot be empty"
+            }
+        }
     },
 }, {
     timestamps: false

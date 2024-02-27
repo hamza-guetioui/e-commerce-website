@@ -1,7 +1,8 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../utils/database');
 
-const { Category } = require('./Category');
+const Product = require('./Product');
+const Category = require('./Category')
 const Color = require('./Color');
 const Size = require('./Size');
 const Image = require('./Image')
@@ -14,11 +15,31 @@ const ProductItem = sequelize.define("productItem", {
     },
     price: {
         type: DataTypes.FLOAT,
-        allowNull: false
+        allowNull: false,
+        validate: {
+            isFloat: {
+                args: true,
+                msg: "Price must be a valid floating-point number."
+            },
+            min: {
+                args: [0],
+                msg: "Price cannot be negative."
+            }
+        }
     },
     qtyInStore: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
+        validate: {
+            isInt: {
+                args: true,
+                msg: "Quantity must be an integer."
+            },
+            min: {
+                args: [0],
+                msg: "Quantity cannot be negative."
+            }
+        }
     }
 }, {
     timestamps: false,
@@ -26,6 +47,10 @@ const ProductItem = sequelize.define("productItem", {
 })
 
 // Association :
+
+// Product, ProductItem => One-To-One
+Product.hasOne(ProductItem, { foreignKey: { allowNull: false }, onDelete: 'CASCADE' })
+ProductItem.belongsTo(Product ,{ foreignKey: { allowNull: false }, onDelete: 'CASCADE' })
 
 // ProductItem, Category => Many-to-Many
 const ProductsCategory = sequelize.define("productsCategory", {
@@ -58,7 +83,7 @@ ProductItem.belongsToMany(Size, { through: ProductsSize });
 Size.belongsToMany(ProductItem, { through: ProductsSize });
 
 // ProductItem, Image => Many-to-One
-ProductItem.hasMany(Image)
-Image.belongsTo(ProductItem)
+ProductItem.hasMany(Image, { foreignKey: { allowNull: false }, onDelete: 'CASCADE' })
+Image.belongsTo(ProductItem, { foreignKey: { allowNull: false }, onDelete: 'CASCADE' })
 
 module.exports = ProductItem

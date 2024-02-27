@@ -1,6 +1,8 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../utils/database')
 
+const Promotion = require('./Promotion');
+
 const Category = sequelize.define("category", {
     id: {
         type: DataTypes.INTEGER,
@@ -10,13 +12,26 @@ const Category = sequelize.define("category", {
     categoryName: {
         type: DataTypes.STRING(50),
         allowNull: false,
-        unique: true
+        unique: true,
+        validate: {
+            is: {
+                args: /^[a-zA-Z]+[a-zA-Z\s]*$/,
+                msg: "Category name only allows only letters"
+            },
+            isEmpty: {
+                args: false,
+                msg: "Please enter a valid category name"
+            }
+        }
     },
 }, {
     timestamps: false
 });
 
-const CategoriesRelation = sequelize.define("categoriesRelation", {
+// Association :
+
+// Category, Category => Many-to-Many
+const CategoryRolation = sequelize.define("CategoryRolation", {
     parentCategoryId: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -38,9 +53,19 @@ const CategoriesRelation = sequelize.define("categoriesRelation", {
     timestamps: false
 });
 
-Category.belongsToMany(Category, { through: CategoriesRelation, foreignKey: 'parentCategoryId', as: 'Parent' });
-Category.belongsToMany(Category, { through: CategoriesRelation, foreignKey: 'childCategoryId', as: 'Child' });
+Category.belongsToMany(Category, { through: CategoryRolation, foreignKey: 'parentCategoryId', as: 'Parent' });
+Category.belongsToMany(Category, { through: CategoryRolation, foreignKey: 'childCategoryId', as: 'Child' });
+
+// Category, Promotion => Many-To-Many
+const CategoryPromotion = sequelize.define("CategoryPromotion", {
+
+}, {
+    tableName: 'categories_promotions',
+    timestamps: false
+});
+
+Category.belongsToMany(Promotion, { through: CategoryPromotion });
+Promotion.belongsToMany(Category, { through: CategoryPromotion });
 
 
-
-module.exports = { CategoriesRelation, Category }
+module.exports = Category

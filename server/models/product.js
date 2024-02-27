@@ -1,7 +1,6 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../utils/database')
 
-const ProductItem = require('./ProductItem')
 
 const Product = sequelize.define("product", {
     id: {
@@ -12,28 +11,41 @@ const Product = sequelize.define("product", {
     name: {
         type: DataTypes.STRING,
         allowNull: false,
-        validator: {
-            isEmpty: false
+        validate: {
+            is: {
+                args: /^[a-zA-Z]+[a-zA-Z0-9\s]*$/,
+                msg: "Product name must contain only letters, numbers, and spaces."
+            },
+            isEmpty: {
+                args: false,
+                msg: "Product name cannot be empty."
+            }
         }
     },
     description: {
         type: DataTypes.TEXT,
         allowNull: false,
+        validate: {
+            notEmpty: {
+                args: true,
+                msg: "Product description cannot be empty."
+            }
+        }
     },
     image: {
         type: DataTypes.STRING,
         allowNull: false,
+        validate: {
+            notEmpty: {
+                args: true,
+                msg: "Product description cannot be empty."
+            }
+        }
     }
 }, {
-    timestamps:  true,
+    timestamps: true,
+    paranoid: true
 })
 
-// Association : Product, ProductItem => One-To-One
-Product.hasOne(ProductItem, {
-    foreignKey: {
-        allowNull: false
-    }
-})
-ProductItem.belongsTo(Product)
 
 module.exports = Product
