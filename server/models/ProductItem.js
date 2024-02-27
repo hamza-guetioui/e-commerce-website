@@ -28,16 +28,34 @@ const ProductItem = sequelize.define("productItem", {
 // Association :
 
 // ProductItem, Category => Many-to-Many
-ProductItem.belongsToMany(Category, { through: "productsCategories" });
-Category.belongsToMany(ProductItem, { through: "productsCategories" });
+const ProductsCategory = sequelize.define("productsCategory", {
+
+}, {
+    tableName: "products_categories",
+    timestamps: false
+})
+ProductItem.belongsToMany(Category, { through: ProductsCategory });
+Category.belongsToMany(ProductItem, { through: ProductsCategory });
 
 // ProductItem, Color => Many-to-Many
-ProductItem.belongsToMany(Color, { through: "productsColors" });
-Color.belongsToMany(ProductItem, { through: "productsColors" });
+const ProductsColor = sequelize.define("productsColor", {
+
+}, {
+    tableName: "products_colors",
+    timestamps: false
+})
+ProductItem.belongsToMany(Color, { through: ProductsColor });
+Color.belongsToMany(ProductItem, { through: ProductsColor });
 
 // ProductItem, Size => Many-to-Many
-ProductItem.belongsToMany(Size, { through: "productsSizes" });
-Size.belongsToMany(ProductItem, { through: "productsSizes" });
+const ProductsSize = sequelize.define("productsSize", {
+
+}, {
+    tableName: "products_sizes",
+    timestamps: false
+})
+ProductItem.belongsToMany(Size, { through: ProductsSize });
+Size.belongsToMany(ProductItem, { through: ProductsSize });
 
 // ProductItem, Image => Many-to-One
 ProductItem.hasMany(Image)

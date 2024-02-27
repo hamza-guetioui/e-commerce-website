@@ -7,13 +7,13 @@ const Size = sequelize.define("size", {
         primaryKey: true,
         autoIncrement: true
     },
-    size_name: {
+    sizeName: {
         type: DataTypes.STRING(50),
         allowNull: false,
         unique: true,
     }
 },{
-    timestamp:false
+    timestamps:false
 })
 
 

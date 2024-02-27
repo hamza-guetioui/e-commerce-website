@@ -18,17 +18,17 @@ app.use('/images', express.static(path.join('public', 'images')));
 
 
 const Product = require('./models/Product')
-const ProductItem = require('./models/ProductItem')
-const {Category} = require('./models/Category');
-const { CategoriesRelation } = require('./models/Category');
-const Color = require('./models/Color');
-const Size = require('./models/Size');
-const Image = require('./models/Image')
+// const ProductItem = require('./models/ProductItem')
+// const {Category} = require('./models/Category');
+// const { CategoriesRelation } = require('./models/Category');
+// const Color = require('./models/Color');
+// const Size = require('./models/Size');
+// const Image = require('./models/Image')
 
 // const ProductItems = require('./models/ProductItems')
 const sequelize = require('./utils/database');
 
-sequelize.sync({ alter: true }).then((res) => {
+sequelize.sync({alter : true}).then((res) => {
     console.log("done")
 }).catch(err => {
     if (err) throw err

@@ -34,6 +34,7 @@ const CategoriesRelation = sequelize.define("categoriesRelation", {
         }
     },
 }, {
+    tableName: 'categories_relations',
     timestamps: false
 });
 
