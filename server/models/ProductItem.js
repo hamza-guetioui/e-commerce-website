@@ -27,7 +27,7 @@ const ProductItem = sequelize.define("productItem", {
             }
         }
     },
-    qtyInStore: {
+    quantityInStore: {
         type: DataTypes.INTEGER,
         allowNull: false,
         validate: {

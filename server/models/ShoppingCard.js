@@ -10,15 +10,15 @@ const ShoppingCard = sequelize.define("shoppingCard", {
         primaryKey: true,
         autoIncrement: true
     },
-},{
-    tableName : "shopping_cards",
-    timestamps : false,
+}, {
+    tableName: "shopping_cards",
+    timestamps: false,
 })
 
 // Association :
 
 // ShoppingCard, Customer => One-to-One
-ShoppingCard.belongsTo(Customer, { foreignKey: {allowNull: false }, onDelete: "CASCADE" });
+ShoppingCard.belongsTo(Customer, { foreignKey: { allowNull: false }, onDelete: "CASCADE" });
 Customer.hasOne(ShoppingCard)
 
 // ShoppingCard, Product => Many-to-Many
@@ -41,9 +41,10 @@ const ShoppingCardItem = sequelize.define("shoppingCardItem", {
     },
     quantity: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         defaultValue: 1,
         validate: {
-            isInt: { msg: 'Quantity must be an integer.',},
+            isInt: { msg: 'Quantity must be an integer.', },
             min: {
                 args: [1],
                 msg: 'Quantity must be at least 1.',
@@ -51,7 +52,7 @@ const ShoppingCardItem = sequelize.define("shoppingCardItem", {
         }
     }
 }, {
-    tableName: "shoppingCards_items",
+    tableName: "shopping_cards_items",
     timestamps: false,
 })
 

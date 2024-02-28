@@ -9,7 +9,7 @@ const PaymentMethod = sequelize.define("paymentMethod", {
         primaryKey: true,
         autoIncrement: true
     },
-    cardholderName: {
+    cardHolderName: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
@@ -75,7 +75,8 @@ const PaymentMethod = sequelize.define("paymentMethod", {
         },
     },
 }, {
-    tableName: "payment_methods"
+    tableName: "payment_methods",
+    timestamps: false
 })
 
 // Association : 

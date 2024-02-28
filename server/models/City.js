@@ -26,25 +26,6 @@ const City = sequelize.define("city", {
     timestamps: false
 })
 
-// City.sync({force:true}).then(()=>{
-//    City.blukCreate([
-//     { cityName: 'Casablanca' },
-//     { cityName: 'Rabat' },
-//     { cityName: 'Marrakech' },
-//     { cityName: 'Fes' },
-//     { cityName: 'Tangier' },
-//     { cityName: 'Agadir' },
-//     { cityName: 'Meknes' },
-//     { cityName: 'Oujda' },
-//     { cityName: 'Kenitra' },
-//     { cityName: 'Tetouan' },
-//     { cityName: 'Beni Mellal' },
-//     { cityName: 'Nador' },
-//     { cityName: 'Essaouira' },
-//     { cityName: 'El Jadida' },
-//     { cityName: 'Dakhla' } ,
-//     { cityName: 'Tafraoute' }])
-// })
 
 
 module.exports = City

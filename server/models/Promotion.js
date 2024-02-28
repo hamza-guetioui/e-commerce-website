@@ -12,22 +12,26 @@ const Promostion = sequelize.define('promostion', {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-            notNull: { msg: 'Title is required.' },
-            notEmpty: { msg: 'Title cannot be empty.' },
+            notNull: { msg: 'Promostion title is required.' },
+            notEmpty: { msg: 'Promostion title cannot be empty.' },
         },
     },
-    dscription: {
+    description: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: false,
+        validate: {
+            notNull: { msg: 'Promostion description is required.' },
+            notEmpty: { msg: 'Promostion description cannot be empty.' },
+        },
     },
-    dicountRate: {
+    discountRate: {
         type: DataTypes.INTEGER,
         allowNull: false,
         validate: {
-            notNull: { msg: 'Discount rate is required.' },
-            isInt: { msg: 'Discount rate must be an integer.' },
-            min: { args: [0], msg: 'Discount rate cannot be negative.' },
-            max: { args: [100], msg: 'Discount rate cannot be greater than 100.' },
+            notNull: { msg: 'Promostion discount rate is required.' },
+            isInt: { msg: 'Promostion discount rate must be an integer.' },
+            min: { args: [0], msg: 'Promostion discount rate cannot be negative.' },
+            max: { args: [100], msg: 'Promostion discount rate cannot be greater than 100.' },
         },
     },
     image: {
@@ -38,19 +42,19 @@ const Promostion = sequelize.define('promostion', {
         type: DataTypes.DATE,
         allowNull: false,
         validate: {
-            notNull: { msg: 'Start date is required.' },
-            isDate: { msg: 'Start date must be a valid date.' },
+            notNull: { msg: 'Promostion start date is required.' },
+            isDate: { msg: 'Promostion start date must be a valid date.' },
         },
     },
     endAt: {
         type: DataTypes.DATE,
         allowNull: false,
         validate: {
-            notNull: { msg: 'End date is required.' },
-            isDate: { msg: 'End date must be a valid date.' },
+            notNull: { msg: 'Promostion end date is required.' },
+            isDate: { msg: 'Promostion end date must be a valid date.' },
             isEndDateValid(value) {
                 if (new Date(value) <= new Date(this.startAt)) {
-                    throw new Error('End date must be greater than start date.');
+                    throw new Error('Promostion end date must be greater than start date.');
                 }
             },
         },

@@ -80,6 +80,7 @@ const CustomerAddress = sequelize.define("customerAddress", {
     },
     isDefault: {
         type: DataTypes.BOOLEAN,
+        allowNull: false,
         defaultValue: false
     }
 

@@ -26,11 +26,9 @@ const Product = sequelize.define("product", {
         type: DataTypes.TEXT,
         allowNull: false,
         validate: {
-            notEmpty: {
-                args: true,
-                msg: "Product description cannot be empty."
-            }
-        }
+            notNull: { msg: 'Product description is required.' },
+            notEmpty: { msg: 'Product description cannot be empty.' },
+        },
     },
     image: {
         type: DataTypes.STRING,
