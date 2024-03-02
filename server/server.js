@@ -30,7 +30,7 @@ app.use('/images', express.static(path.join('public', 'images')));
 // const Image = require('./models/Image')
 // const ProductItem = require('./models/ProductItem')
 
-const ShoppingCard = require('./models/ShoppingCard')
+// const ShoppingCard = require('./models/ShoppingCard')
 // const WishList = require('./models/Whishlist')
 
 // const Order = require('./models/Order')
@@ -45,12 +45,28 @@ sequelize.sync({ alter: true })
         if (err) throw err
     })
 // Import Routes
-const ProductsRouter = require('./router/ProductsRouter');
+const ProductsRouter = require('./routers/ProductsRouter');
 
 // Routers 
 app.use('/', ProductsRouter);
 
-
 app.listen(port, async () => {
     console.log(`Server started on port ${port}!`);
 });
+
+
+
+// npm install http2-express-bridge
+
+// const http2Express = require('http2-express-bridge')
+// const http2 = require('http2')
+// const { readFileSync } = require('fs')
+// const app = http2Express(express)
+
+// const options = {
+//   key: readFileSync('<Certificate Key>'),
+//   cert: readFileSync('<Certificate file>'),
+//   allowHTTP1: true
+// }
+// const server = http2.createSecureServer(options, app)
+// server.listen(port)

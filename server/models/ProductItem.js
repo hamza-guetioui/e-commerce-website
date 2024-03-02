@@ -11,7 +11,7 @@ const ProductItem = sequelize.define("productItem", {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
-        autoIncrement: true
+        autoIncrement: true,
     },
     price: {
         type: DataTypes.FLOAT,

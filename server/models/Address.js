@@ -1,5 +1,5 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../utils/database')
+const sequelize = require('../utils/database');
 
 const Customer = require('./Customer')
 const City = require('./City')
@@ -88,6 +88,10 @@ const CustomerAddress = sequelize.define("customerAddress", {
     tableName: "customers_addresses",
     timestamps: false
 })
+
+// Association :
+
+// Customer, Address => Many-To-Many
 Customer.belongsToMany(Address, { through: CustomerAddress });
 Address.belongsToMany(Customer, { through: CustomerAddress });
 

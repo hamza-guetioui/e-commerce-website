@@ -9,6 +9,5 @@ const sequelize = new Sequelize(
         host: process.env.DB_HOST, // Database  host
         dialect: 'mysql' // Type of database 
     },
-    // { query: { raw: true } }
 );
 module.exports = sequelize; 
