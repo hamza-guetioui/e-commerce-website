@@ -23,7 +23,6 @@ app.use('/images', express.static(path.join('public', 'images')));
 
 
 // const Product = require('./models/Product')
-// const Category = require('./models/Category');
 // const Promostion = require('./models/Promotion')
 // const Color = require('./models/Color');
 // const Size = require('./models/Size');
@@ -36,19 +35,11 @@ app.use('/images', express.static(path.join('public', 'images')));
 // const Order = require('./models/Order')
 // const OrderItem = require('./models/OrderItem')
 
-const sequelize = require('./utils/database')
-sequelize.sync({ alter: true })
-    .then(() => {
-        console.log('done')
-    })
-    .catch((err) => {
-        if (err) throw err
-    })
 // Import Routes
-const ProductsRouter = require('./routers/ProductsRouter');
+const categoryRouters = require('./routers/categoryRouters');
 
 // Routers 
-app.use('/', ProductsRouter);
+app.use('/', categoryRouters);
 
 app.listen(port, async () => {
     console.log(`Server started on port ${port}!`);
