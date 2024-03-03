@@ -45,7 +45,11 @@ async function update(req, res) {
     try {
         const category = await Category.findByPk(categoryId);
         if (!category) {
-            return res.status(404).json({ message: 'Category not found' });
+
+            return res.status(404).json({
+                status: "error",
+                message: "Category not found"
+            });
         }
         await category.update({
 
@@ -62,17 +66,27 @@ async function update(req, res) {
         });
 
     } catch (err) {
-        res.status(500).json({ message: err.toString() })
+        res.status(500).json({
+            status: "error",
+            message: err.toString(),
+            data: null
+        })
     }
 }
 async function destroy(req, res) {
-    const categoryId = req.params.id
+    const categoryId = req.params.id;
+    // categoryId Validation
+    if (!categoryId || typeof categoryId !== 'string') {
+        return res.status(400).json({ message: 'Invalid category ID format' });
+    }
     try {
         const category = await Category.findByPk(categoryId);
         if (!category) {
-            return res.status(404).json({ message: 'Category not found' });
+            return res.status(404).json({
+                status: "error",
+                message: "Category not found"
+            });
         }
-
         await category.destroy();
         res.status(204).json({
             status: "success",
@@ -80,7 +94,11 @@ async function destroy(req, res) {
             data: { categoryId }
         });
     } catch (err) {
-        res.status(500).json({ message: err.toString() })
+        res.status(500).json({
+            status: "error",
+            message: err.toString(),
+            data: null
+        })
     }
 }
 module.exports = {

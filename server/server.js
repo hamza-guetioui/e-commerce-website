@@ -18,9 +18,11 @@ app.use('/images', express.static(path.join('public', 'images')));
 
 // Import Routes
 const categoryRouters = require('./routers/categoryRouters');
+const  productRouters = require('./routers/productRouters')
 
 // Routers 
-app.use('/', categoryRouters);
+app.use('/categories', categoryRouters);
+app.use('/products', productRouters);
 
 app.listen(port, async () => {
     console.log(`Server started on port ${port}!`);
