@@ -16,24 +16,6 @@ app.use(cors({
 app.use(express.static("public"))
 app.use('/images', express.static(path.join('public', 'images')));
 
-// const Customer = require('./models/Customer')
-// const Address = require('./models/Address')
-// const City = require('./models/City')
-// const PaymentMethod = require('./models/PaymentMethod')
-
-
-// const Product = require('./models/Product')
-// const Promostion = require('./models/Promotion')
-// const Color = require('./models/Color');
-// const Size = require('./models/Size');
-// const Image = require('./models/Image')
-// const ProductItem = require('./models/ProductItem')
-
-// const ShoppingCard = require('./models/ShoppingCard')
-// const WishList = require('./models/Whishlist')
-
-// const Order = require('./models/Order')
-// const OrderItem = require('./models/OrderItem')
 
 // Import Routes
 const categoryRouters = require('./routers/categoryRouters');
