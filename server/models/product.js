@@ -11,6 +11,10 @@ const Product = sequelize.define("product", {
     name: {
         type: DataTypes.STRING,
         allowNull: false,
+        unique: {
+            arg: true,
+            msg: 'The product name is already exist !'
+        },
         validate: {
             is: {
                 args: /^[a-zA-Z]+[a-zA-Z0-9\s]*$/,

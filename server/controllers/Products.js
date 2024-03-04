@@ -19,6 +19,7 @@ async function index(req, res) {
         })
     }
 }
+
 async function store(req, res) {
     try {
         const products = await Product.create({});
@@ -36,6 +37,7 @@ async function store(req, res) {
         })
     }
 }
+
 async function show(req, res) {
     try {
         const products = await Product.findAll();
@@ -53,6 +55,7 @@ async function show(req, res) {
         })
     }
 }
+
 async function update(req, res) {
     try {
         const products = await Product.findAll();
@@ -70,6 +73,7 @@ async function update(req, res) {
         })
     }
 }
+
 async function destroy(req, res) {
     try {
         const products = await Product.findAll();
@@ -87,15 +91,7 @@ async function destroy(req, res) {
         })
     }
 }
-const productImage = (req, res) => {
-    const imageSrc = req.query.imageSrc
-    const imagePath = path.resolve('public/images', imageSrc)
-    if (fs.existsSync(imagePath)) {
-        res.sendFile(imagePath);
-    } else {
-        res.status(404).send("Image not found");
-    }
-}
+
 
 module.exports = {
     index,
@@ -103,5 +99,4 @@ module.exports = {
     show,
     update,
     destroy,
-    productImage
 };

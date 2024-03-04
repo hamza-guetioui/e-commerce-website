@@ -2,6 +2,7 @@ require('dotenv').config();
 
 const path = require('node:path');
 const express = require('express');
+const bodyParser = require('body-parser')
 const app = express();
 const port = process.env.PORT || 8000;
 
@@ -11,14 +12,15 @@ app.use(cors({
     optionsSuccessStatus: 200
 }));
 
-// Serving static files 
+// App Middlewares
 app.use(express.static("public"))
-app.use('/images', express.static(path.join('public', 'images')));
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
 
 // Import Routes
 const categoryRouters = require('./routers/categoryRouters');
-const  productRouters = require('./routers/productRouters')
+const productRouters = require('./routers/productRouters')
 
 // Routers 
 app.use('/categories', categoryRouters);

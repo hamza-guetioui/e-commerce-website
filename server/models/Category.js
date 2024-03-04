@@ -18,10 +18,9 @@ const Category = sequelize.define("category", {
                 args: /^[a-zA-Z]+[a-zA-Z\s]*$/,
                 msg: "Category name only allows only letters"
             },
-            isEmpty: {
-                args: false,
+            notEmpty: {
                 msg: "Please enter a valid category name"
-            }
+            },
         }
     },
 }, {
@@ -31,7 +30,7 @@ const Category = sequelize.define("category", {
 // Association :
 
 // Category, Category => Many-to-Many
-const CategoryRolation = sequelize.define("CategoryRolation", {
+const CategoryRelation = sequelize.define("categoryRelation", {
     parentCategoryId: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -53,8 +52,8 @@ const CategoryRolation = sequelize.define("CategoryRolation", {
     timestamps: false
 });
 
-Category.belongsToMany(Category, { through: CategoryRolation, foreignKey: 'parentCategoryId', as: 'Parent' });
-Category.belongsToMany(Category, { through: CategoryRolation, foreignKey: 'childCategoryId', as: 'Child' });
+Category.belongsToMany(Category, { through: CategoryRelation, foreignKey: 'parentCategoryId', as: 'Parent' });
+Category.belongsToMany(Category, { through: CategoryRelation, foreignKey: 'childCategoryId', as: 'Child' });
 
 // Category, Promotion => Many-To-Many
 const CategoryPromotion = sequelize.define("CategoryPromotion", {
@@ -68,4 +67,4 @@ Category.belongsToMany(Promotion, { through: CategoryPromotion });
 Promotion.belongsToMany(Category, { through: CategoryPromotion });
 
 
-module.exports = Category
+module.exports = {Category , CategoryRelation}
