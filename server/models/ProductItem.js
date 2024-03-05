@@ -50,11 +50,15 @@ const ProductItem = sequelize.define("productItem", {
 
 // Product, ProductItem => One-To-One
 Product.hasOne(ProductItem, { foreignKey: { allowNull: false }, onDelete: 'CASCADE' })
-ProductItem.belongsTo(Product ,{ foreignKey: { allowNull: false }, onDelete: 'CASCADE' })
+ProductItem.belongsTo(Product, { foreignKey: { allowNull: false }, onDelete: 'CASCADE' })
 
 // ProductItem, Category => Many-to-Many
 const ProductsCategory = sequelize.define("productsCategory", {
-
+    isParent: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        field: 'isParent', 
+    },
 }, {
     tableName: "products_categories",
     timestamps: false
@@ -85,5 +89,6 @@ Size.belongsToMany(ProductItem, { through: ProductsSize });
 // ProductItem, Image => Many-to-One
 ProductItem.hasMany(Image, { foreignKey: { allowNull: false }, onDelete: 'CASCADE' })
 Image.belongsTo(ProductItem, { foreignKey: { allowNull: false }, onDelete: 'CASCADE' })
+
 
 module.exports = ProductItem

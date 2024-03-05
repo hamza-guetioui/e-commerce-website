@@ -12,7 +12,6 @@ app.use(cors({
     optionsSuccessStatus: 200
 }));
 
-
 // App Middlewares
 app.use(express.static("public"))
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -21,7 +20,7 @@ app.use(bodyParser.json())
 
 // Import Routes
 const categoryRouters = require('./routers/categoryRouters');
-const productRouters = require('./routers/productRouters')
+const productRouters = require('./routers/productRouters');
 
 // Routers 
 app.use('/categories', categoryRouters);
