@@ -12,11 +12,14 @@ const Category = sequelize.define("category", {
     categoryName: {
         type: DataTypes.STRING(50),
         allowNull: false,
-        unique: true,
+        unique: {
+            arg: true,
+            msg: "Category name must be unique",
+        },
         validate: {
             is: {
                 args: /^[a-zA-Z]+[a-zA-Z\s]*$/,
-                msg: "Category name only allows only letters"
+                msg: "Category name allows only letters"
             },
             notEmpty: {
                 msg: "Please enter a valid category name"
@@ -52,8 +55,8 @@ const CategoryRelation = sequelize.define("categoryRelation", {
     timestamps: false
 });
 
-Category.belongsToMany(Category, { through: CategoryRelation, foreignKey: 'parentCategoryId', as: 'Parent' });
-Category.belongsToMany(Category, { through: CategoryRelation, foreignKey: 'childCategoryId', as: 'Child' });
+Category.belongsToMany(Category, { through: CategoryRelation, foreignKey: 'parentCategoryId', as: 'ParentOf' });
+Category.belongsToMany(Category, { through: CategoryRelation, foreignKey: 'childCategoryId', as: 'ChildOf' });
 
 // Category, Promotion => Many-To-Many
 const CategoryPromotion = sequelize.define("CategoryPromotion", {

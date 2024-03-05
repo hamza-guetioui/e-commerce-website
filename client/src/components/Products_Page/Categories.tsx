@@ -5,53 +5,64 @@ import styles from "./ShopSection.module.css";
 // TypeScript Interfaces
 interface Category {
   id: number;
-  name: string;
+  categoryName: string;
 }
-interface CategoryGroup {
-  parent_category: string;
-  child_categories: Category[];
+interface ParentCategory {
+  id: Number;
+  categoryName: string;
+  children: Category[];
 }
+
+const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 // fetching Categories (SSG)
-const fetchCategoriesFromServer = async () => {
+const getCategories = async () => {
   try {
-    const response = await fetch('http://localhost:4040/products/categories');
+    const response = await fetch(`${apiUrl}/categories`);
     if (!response.ok) {
       throw new Error(`Failed to fetch categories. Status: ${response.status}`);
-    };
-    const data = await response.json();
+    }
+    const { data } = await response.json();
     return data;
   } catch (error) {
     throw error;
   }
 };
 
- async function Categories() {
-
-  const categories = await fetchCategoriesFromServer()
-
+async function Categories() {
+  const categories = await getCategories();
   return (
-<div className={styles.categoriesContainer}>
-  <div className={styles.categoryLinkWrapper}>
-    <Link href="/products" className={styles.pageLink}>
-      All Categories
-    </Link>
-  </div>
-  {categories.map((categoryGroup : CategoryGroup) => (
-    <div key={categoryGroup.parent_category}>
-      <span className={styles.subMenuGroup}>{categoryGroup.parent_category}</span>
-      {categoryGroup.child_categories.map((category : Category) => (
-        <div key={category.id} className={styles.categoryLinkWrapper}>
-          <Link
-            href={`/products?category=${category.name}&opt=${categoryGroup.parent_category}` || "#"}
-            className={styles.pageLink}
-          >
-            {category.name}
+    <div className={styles.categoriesContainer}>
+      <div className={styles.categoryLinkWrapper}>
+        {/* All Categories Header */}
+        <Link href="/products" className={styles.pageLink}>
+          All Categories
+        </Link>
+        {/* Categories Looped through here */}
+      </div>
+      {categories.map((parentCategory: ParentCategory) => (
+        <div key={parentCategory.id.toString()}>
+          {/* Parent category */}
+          <Link href="#" className={styles.subMenuGroup}>
+            {parentCategory.categoryName}
           </Link>
+          
+          {/* Children categories */}
+          {parentCategory.children.map((category: Category) => (
+            <div key={category.id} className={styles.categoryLinkWrapper}>
+              <Link
+                href={
+                  `/products?category=${category.categoryName}&opt=${parentCategory.categoryName}` ||
+                  "#"
+                }
+                className={styles.pageLink}
+              >
+                {category.categoryName}
+              </Link>
+            </div>
+          ))}
         </div>
       ))}
     </div>
-  ))}
-</div>
   );
 }
 

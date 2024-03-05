@@ -2,13 +2,21 @@ const router = require('express').Router()
 const Categories = require('../controllers/Categories')
 
 
+// Middlewares
+const {
+    validateCategoryId,
+    validateCategoryName,
+} = require('../middlewares/categoryValidationMiddleware')
+
+
 
 router.route('/')
     .get(Categories.index)
-    .post(Categories.store)
+    .post(validateCategoryName, Categories.store)
 
 router.route('/:id')
-    .post(Categories.update)
+    .all(validateCategoryId)
+    .put(validateCategoryName, Categories.update)
     .delete(Categories.destroy)
 
 module.exports = router;

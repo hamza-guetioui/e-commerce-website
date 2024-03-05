@@ -4,13 +4,14 @@ const path = require('node:path');
 const express = require('express');
 const bodyParser = require('body-parser')
 const app = express();
-const port = process.env.PORT || 8000;
+const port = process.env.PORT;
 
 const cors = require('cors');
 app.use(cors({
     origin: 'http://localhost:3000',
     optionsSuccessStatus: 200
 }));
+
 
 // App Middlewares
 app.use(express.static("public"))
