@@ -1,12 +1,12 @@
 const router = require('express').Router()
-const Categories = require('../controllers/Categories')
+const Categories = require('../controllers/Categories.controller')
 
 
 // Middlewares
 const {
     validateCategoryId,
     validateCategoryName,
-} = require('../middlewares/categoryValidationMiddleware')
+} = require('../middlewares/categoryValidation.middleware')
 
 
 

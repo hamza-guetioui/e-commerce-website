@@ -2,9 +2,9 @@ const { DataTypes } = require('sequelize');
 const sequelize = require('../utils/database');
 
 const Product = require('./Product');
-const Category = require('./Category')
+const { Category } = require('./Category')
 const Color = require('./Color');
-const Size = require('./Size');
+const Size = require('./Size.model');
 const Image = require('./Image')
 
 const ProductItem = sequelize.define("productItem", {
@@ -57,7 +57,7 @@ const ProductsCategory = sequelize.define("productsCategory", {
     isParent: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
-        field: 'isParent', 
+        field: 'isParent',
     },
 }, {
     tableName: "products_categories",
@@ -91,4 +91,4 @@ ProductItem.hasMany(Image, { foreignKey: { allowNull: false }, onDelete: 'CASCAD
 Image.belongsTo(ProductItem, { foreignKey: { allowNull: false }, onDelete: 'CASCADE' })
 
 
-module.exports = ProductItem
+module.exports = { ProductItem, ProductsCategory }

@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const products = require('../controllers/Products')
+const products = require('../controllers/Products.controller')
 
 router.route('/')
     .get(products.index)

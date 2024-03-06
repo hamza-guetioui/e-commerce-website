@@ -3,9 +3,9 @@ const sequelize = require('../utils/database')
 
 const Customer = require('./Customer')
 const Address = require('./Address')
-const PaymentMethod = require('./PaymentMethod')
+const PaymentMethod = require('./PaymentMethod.model')
 
-const OrderItem = require('./OrderItem')
+const OrderItem = require('./OrderItem.model')
 
 const Order = sequelize.define("order", {
     id: {

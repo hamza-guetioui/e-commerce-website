@@ -1,4 +1,4 @@
-const { Category, CategoryRelation } = require('../models/Category');
+const { Category, CategoryRelation } = require('../models/Category.model');
 const { Sequelize } = require('sequelize');
 const sequelize = require('../utils/database')
 const { success, error } = require('../utils/responseFormat')

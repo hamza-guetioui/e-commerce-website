@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../utils/database')
 
-const Promotion = require('./Promotion');
+const Promotion = require('./Promotion.model');
 
 const Category = sequelize.define("category", {
     id: {
@@ -70,4 +70,4 @@ Category.belongsToMany(Promotion, { through: CategoryPromotion });
 Promotion.belongsToMany(Category, { through: CategoryPromotion });
 
 
-module.exports = {Category , CategoryRelation}
+module.exports = { Category, CategoryRelation }

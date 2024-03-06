@@ -1,10 +1,10 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../utils/database')
 
-const Product = require('./Product')
-const Promostion = require('./Promotion')
+const Product = require('./Product.model')
+const Promostion = require('./Promotion.model')
 const Color = require('./Color')
-const Size = require('./Size')
+const Size = require('./Size.model')
 
 const OrderItem = sequelize.define("OrderItem", {
     id: {
