@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 
-function FilterBar() {
+function Filter() {
   const router = useRouter();
   function hundleClick() {
     router.push("http://localhost:3000/products?name='idokan'");
@@ -19,4 +19,4 @@ function FilterBar() {
   );
 }
 
-export default FilterBar;
+export default Filter;

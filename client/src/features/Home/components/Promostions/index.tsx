@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-function OfferBox() {
+function Promostions() {
   return (
     <div className="flex w-10/12 md:w-9/12 h-80 md:h-44 m-auto mb-12 flex-wrap md:flex-nowrap gap-4">
       <div className="relative w-full md:w-1/2 h-1/2 md:h-full rounded-md overflow-hidden shadow-lg">
@@ -50,4 +50,4 @@ function OfferBox() {
   );
 }
 
-export default OfferBox;
+export default Promostions;

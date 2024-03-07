@@ -20,10 +20,15 @@ app.use(bodyParser.json())
 // Import Routes
 const categoryRouters = require('./routers/Category.routes');
 const productRouters = require('./routers/Product.routes');
+const imageRouters = require('./routers/Image.routes')
 
 // Routers 
 app.use('/categories', categoryRouters);
 app.use('/products', productRouters);
+app.use('/images', imageRouters);
+
+
+
 
 app.listen(port, async () => {
     console.log(`Server started on port ${port}!`);

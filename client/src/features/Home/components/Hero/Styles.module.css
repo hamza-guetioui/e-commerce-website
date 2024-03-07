@@ -1,7 +1,17 @@
 .container {
-  @apply flex-col w-full h-[calc(100vh-5rem)] p-2 rounded-bl-lg rounded-br-lg 
-lg:flex-row lg:p-4 gap-3 mb-12;
+  --box-shadow-custom: -1px 20px 20px -16px rgba(0, 0, 0, 0.24);
+  --height-custom: calc(100vh - 5rem);
+
+  @apply flex justify-center items-center w-full p-2 rounded-bl-lg 
+        rounded-br-lg h-custom shadow-custom gap-3 mb-12
+        lg:flex-row lg:p-4;
 }
+/* .slidebar {
+  @apply ;
+}
+.slide {
+  @apply ;
+} */
 
 /* slidebar section stylesheet */
 .sildeBox {
@@ -19,7 +29,7 @@ lg:flex-row lg:p-4 gap-3 mb-12;
   @apply leading-tight drop-shadow-2xl text-xs font-bold h-14
    md:h-20 mb-4 md:text-base
   lg:leading-relaxed;
-  overflow : overlay
+  overflow: overlay;
 }
 
 /* Explore section elements stylesheet */
@@ -40,7 +50,7 @@ lg:flex-row lg:p-4 gap-3 mb-12;
 .exploreBoxDescription {
   @apply leading-tight drop-shadow-2xl h-8 mb-2 overflow-y-scroll text-xs font-bold 
   md:h-14 lg:text-lg lg:leading-relaxed;
-  overflow : overlay
+  overflow: overlay;
 }
 
 /* boxes cover image & button */

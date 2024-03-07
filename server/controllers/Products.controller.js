@@ -4,7 +4,10 @@ const Product = require('../models/Product.model')
 
 async function index(req, res) {
     try {
-        const products = await Product.findAll();
+        const products = await Product.findAll({
+            attributes: ['id', 'name', 'description', 'image'],
+        });
+        
         res.status(200).json({
             status: "success",
             message: "Retrieved categories successfully",
@@ -91,7 +94,6 @@ async function destroy(req, res) {
         })
     }
 }
-
 
 module.exports = {
     index,

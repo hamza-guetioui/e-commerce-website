@@ -1,12 +1,12 @@
 const router = require('express').Router()
-const products = require('../controllers/Products.controller')
+const Products = require('../controllers/Products.controller')
 
 router.route('/')
-    .get(products.index)
-    .post(products.store);
+    .get(Products.index)
+    .post(Products.store);
 router.route('/:id')
-    .get(products.show)
-    .put(products.update)
-    .delete(products.destroy);
+    .get(Products.show)
+    .put(Products.update)
+    .delete(Products.destroy);
 
 module.exports = router

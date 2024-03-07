@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 
 // Layout Components
-import { Topbar, Navbar, Footer } from "@/components/Layout";
+import LayoutComponents from "@/features/Layout";
 
 // import Font Awesome CSS
 import "@fortawesome/fontawesome-svg-core/styles.css";
@@ -20,12 +20,12 @@ export const metadata: Metadata = {
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`bg-[#b9b9b945] ${inter.className} `}>
         <main className="w-full">
-          <Topbar />
-          <Navbar />
-          {children}
-          <Footer />
+          <LayoutComponents >
+            {children}
+          </LayoutComponents>
+     
         </main>
       </body>
     </html>

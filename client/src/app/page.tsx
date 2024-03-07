@@ -1,22 +1,9 @@
-import {
-  Hero,
-  FeatureShowcase,
-  ProductShowcases,
-  StoriesSection,
-  OfferBox,
-  AboutUs,
-} from "@/components/Home_Page";
+import HomeComponets from "@/features/Home";
 
 export default function Home() {
   return (
     <>
-      <Hero />
-      <FeatureShowcase />
-      <ProductShowcases />
-      <StoriesSection />
-      <OfferBox />
-      <AboutUs />
+      <HomeComponets />
     </>
-      
   );
 }

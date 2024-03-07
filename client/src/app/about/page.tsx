@@ -1,4 +1,4 @@
-import About from "@/components/AboutUs_Page";
+import About from "@/features/";
 
 import React from 'react'
 

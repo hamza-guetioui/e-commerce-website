@@ -29,7 +29,7 @@ function Navigator({ isMenuOpen, setIsMenuOpen }: navProps) {
             <li key={page.name} className={`${styles.linkWrapper} group`}>
               {page.name === "Categories" ? (
                 <>
-                  <Link href={"/products"} className={styles.pageLink}>
+                  <Link href={"/store"} className={styles.pageLink}>
                     {page.name}
                     <FontAwesomeIcon
                       icon={faAngleDown}
@@ -52,7 +52,7 @@ function Navigator({ isMenuOpen, setIsMenuOpen }: navProps) {
                               >
                                 <Link
                                   href={
-                                    `/products?category=${category.path?.toString()}&opt=${
+                                    `/store?category=${category.path?.toString()}&opt=${
                                       option.optionsGroupName
                                     }` || "#"
                                   }

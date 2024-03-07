@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-import styles from "./HeroStyles.module.css";
+import styles from "./Styles.module.css";
 
 function ExploreSection() {
   return (

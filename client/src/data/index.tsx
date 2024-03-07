@@ -99,7 +99,7 @@ export const NavigationPages: NavigationPages[] = [
   },
   {
     name: "Store",
-    path: "/products",
+    path: "/store",
   },
   {
     name: "Fashion",

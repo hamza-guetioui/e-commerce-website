@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import styles from "./ShopSection.module.css";
+import styles from "../ShopSection.module.css";
 
 // TypeScript Interfaces
 interface Category {
@@ -34,7 +34,7 @@ async function Categories() {
     <div className={styles.categoriesContainer}>
       <div className={styles.categoryLinkWrapper}>
         {/* All Categories Header */}
-        <Link href="/products" className={styles.pageLink}>
+        <Link href="/store" className={styles.pageLink}>
           All Categories
         </Link>
         {/* Categories Looped through here */}
@@ -51,7 +51,7 @@ async function Categories() {
             <div key={category.id} className={styles.categoryLinkWrapper}>
               <Link
                 href={
-                  `/products?category=${category.categoryName}&opt=${parentCategory.categoryName}` ||
+                  `/store?category=${category.categoryName}&opt=${parentCategory.categoryName}` ||
                   "#"
                 }
                 className={styles.pageLink}

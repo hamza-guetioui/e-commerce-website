@@ -9,22 +9,23 @@ interface Product {
   price: string;
 }
 
+const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 // fetch products (SSR)
-const fetchProductsFromServer = async () => {
+const getProducts = async () => {
   try {
-    const response = await fetch('http://localhost:4040/products');
+    const response = await fetch(`${apiUrl}/products`);
     if (!response.ok) {
       throw new Error(`Failed to fetch products. Status: ${response.status}`);
     }
-    const data = await response.json();
+    const {data} = await response.json();
     return data;
   } catch (error) {
     throw error;
   }
 };
 
-async function ProductsSection () {
-  const products = await fetchProductsFromServer();
+async function Products() {
+  const products = await getProducts();
 
   return (
     <div className={styles.productsContainer}>
@@ -33,6 +34,6 @@ async function ProductsSection () {
       ))}
     </div>
   );
-};
+}
 
-export default ProductsSection;
+export default Products;

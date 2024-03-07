@@ -8,7 +8,7 @@ import "swiper/css/navigation";
 
 import "swiper/css/bundle";
 
-import styles from "./HeroStyles.module.css";
+import styles from "./Styles.module.css";
 
 function Slidebar() {
   return (
