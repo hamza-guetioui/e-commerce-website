@@ -1,7 +1,9 @@
 import React from "react";
 import styles from "./Styles.module.css";
 import ScrollController from "@/features/Home/shared/components/ScrollController";
-import { useScroll } from "./ScrollContext";
+
+// context
+import { useScroll } from "@/features/Home/shared/context/scrollContext";
 
 type HeaderProps = {
   title: string;

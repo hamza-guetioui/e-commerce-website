@@ -1,8 +1,9 @@
 import Hero from "./components/Hero";
 import ProductsShowcases from "./components/ProductsShowcase";
-import Stories from "./components/Stories";
+import StoriesShowcase from "./components/StoriesShowcase";
 import Promostions from "./components/Promostions";
 import AboutUs from "./components/AboutUs";
+
 
 
 
@@ -11,7 +12,7 @@ export default function Home() {
     <>
       <Hero />
       <ProductsShowcases />
-      <Stories />
+      <StoriesShowcase />
       <Promostions />
       <AboutUs />
     </>

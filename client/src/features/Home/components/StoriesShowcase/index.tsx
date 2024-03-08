@@ -2,24 +2,24 @@
 import React from "react";
 import styles from "./Styles.module.css";
 import Intro from "./Intro";
-import StoriesShowcase from "./StoriesShowcase";
+import Stories from "./Stories";
 
 // scroll context
-import { ScrollProvider } from "./ScrollContext";
+import { ScrollProvider } from "@/features/Home/shared/context/scrollContext";
 
 
 
 
 
-function Stories() {
+function StoriesShowcase() {
   return (
     <div className={styles.container}>
       <ScrollProvider>
         <Intro />
-        <StoriesShowcase />
+        <Stories />
       </ScrollProvider>
     </div>
   );
 }
 
-export default Stories;
+export default StoriesShowcase;

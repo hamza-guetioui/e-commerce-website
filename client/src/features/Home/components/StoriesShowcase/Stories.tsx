@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./Styles.module.css";
-import Card from "./Card";
+import StoryCard from "./StoryCard";
 
 // scroll context
-import { useScroll } from "./ScrollContext";
+import { useScroll } from "@/features/Home/shared/context/scrollContext";
 
 const stories = [
   {
@@ -71,7 +71,7 @@ function StoriesShowcase() {
   return (
     <div ref={scrollRef} className={styles.storiesShowcase}>
       {stories.map((story) => {
-        return <Card key={story.id} {...story} />;
+        return <StoryCard key={story.id} {...story} />;
       })}
     </div>
   );

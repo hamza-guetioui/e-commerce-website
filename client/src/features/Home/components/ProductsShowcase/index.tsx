@@ -1,9 +1,11 @@
 import React from "react";
 import Styles from "./Styles.module.css";
-import { ScrollProvider } from "./ScrollContext";
-
 import ProductShowcase from "./ProductShowcase";
 import Products from "./Products";
+
+// context
+import { ScrollProvider } from "@/features/Home/shared/context/scrollContext";
+
 
 function ProductShowcases() {
   return (
