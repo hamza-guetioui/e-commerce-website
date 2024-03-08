@@ -1,6 +1,9 @@
 "use client"
 import React from "react";
-import styles from "./ProdShowStyles.module.css";
+import styles from "./Styles.module.css";
+
+
+// Font Awesome Icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 

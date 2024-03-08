@@ -1,6 +1,6 @@
 import Hero from "./components/Hero";
-import ProductShowcases from "./components/ProductShowcases";
-import StoriesSection from "./components/StoriesSection";
+import ProductsShowcases from "./components/ProductsShowcase";
+import Stories from "./components/Stories";
 import Promostions from "./components/Promostions";
 import AboutUs from "./components/AboutUs";
 
@@ -10,11 +10,11 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <ProductShowcases />
-      <StoriesSection />
+      <ProductsShowcases />
+      <Stories />
       <Promostions />
       <AboutUs />
     </>
-      
+
   );
 }

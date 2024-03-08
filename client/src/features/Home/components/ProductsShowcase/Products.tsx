@@ -1,5 +1,7 @@
+import React from "react";
+
 import Card from "@/features/shared/components/Card";
-import styles from "../ShopSection.module.css";
+
 
 interface Product {
   id: number;
@@ -9,15 +11,17 @@ interface Product {
   price: string;
 }
 
+
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 // fetch products (SSR)
 const getProducts = async () => {
+  "use server";
   try {
     const response = await fetch(`${apiUrl}/products`);
     if (!response.ok) {
       throw new Error(`Failed to fetch products. Status: ${response.status}`);
     }
-    const {data} = await response.json();
+    const { data } = await response.json();
     return data;
   } catch (error) {
     throw error;
@@ -25,14 +29,15 @@ const getProducts = async () => {
 };
 
 async function Products() {
+
   const products = await getProducts();
 
   return (
-      <div className={styles.productsContainer}>
-      {products && products.map((product: Product) => (
-        <Card key={product.id} {...product} />
-      ))}
-    </div>
+    <>
+        {products.map((product : Product) => {
+          return <Card key={product.id} {...product} />;
+        })}
+    </>
   );
 }
 

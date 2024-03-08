@@ -1,10 +1,11 @@
-"use client";
-import React, { useRef } from "react";
-import styles from "./StoriesSection.module.css";
-import ScrollController from "./ScrollController";
+import React from "react";
+import styles from "./Styles.module.css";
 import Card from "./Card";
 
-const clothesData = [
+// scroll context
+import { useScroll } from "./ScrollContext";
+
+const stories = [
   {
     id: 1,
     name: "Tunics",
@@ -63,46 +64,17 @@ const clothesData = [
   },
 ];
 
-function StoriesSection() {
-  const scrollRef = useRef<HTMLDivElement>(null);
+function StoriesShowcase() {
+    
+  const { scrollRef } = useScroll();
 
-  function scrollProducts(scrollTo: string): void {
-
-    if (scrollRef.current) {
-      switch (scrollTo) {
-        case "btnScrollRight":
-          scrollRef.current.scrollLeft += 300;
-          break;
-
-        case "btnScrollLeft":
-          scrollRef.current.scrollLeft -= 300;
-          break;
-      }
-    }
-  }
   return (
-    <div className={styles.container}>
-      <div className={ styles.introBox}>
-        <h1 className={styles.introTitle}>
-          <span className="block text-sm md:text-base">Amzigh Fashion</span>
-          <span className="block text-3xl md:text-4xl">Stories</span>
-        </h1>
-        <p className={styles.introDescription}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt et
-          ex eveniet neque dolore quidem illo.
-        </p>
-        <ScrollController scroll={scrollProducts} />
-      </div>
-      <div
-        ref={scrollRef}
-        className={ styles.cardsContainer}
-      >
-        {clothesData.map(({ id, ...data }) => {
-          return <Card key={id} {...data} />;
-        })}
-      </div>
+    <div ref={scrollRef} className={styles.storiesShowcase}>
+      {stories.map((story) => {
+        return <Card key={story.id} {...story} />;
+      })}
     </div>
   );
 }
 
-export default StoriesSection;
+export default StoriesShowcase;

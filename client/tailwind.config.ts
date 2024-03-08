@@ -10,7 +10,10 @@ const config: Config = {
   theme: {
     extend: {
       minWidth: {
-        '1/5': '20%',
+       '1/5': '20%'
+      },
+      maxWidth: {
+        custom : "var(max-w-custom)"
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

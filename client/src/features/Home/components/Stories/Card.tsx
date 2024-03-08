@@ -1,7 +1,6 @@
-"use client";
 import Image from "next/image";
 import React from "react";
-import styles from "./StoriesSection.module.css";
+import styles from "./Styles.module.css";
 
 interface CardProps {
   name: string;
@@ -11,19 +10,19 @@ interface CardProps {
 
 function Card({ name, image, story }: CardProps) {
   return (
-    <div className={styles.cardBox}>
+    <div className={styles.card}>
       <div className="w-full h-4/5">
         <Image
-          className={styles.cardImage}
+          className={styles.image}
           src={`/images/${image}`}
           alt="title"
           width={400}
           height={400}
         />
       </div>
-      <div className={styles.cardContent}>
-        <h1 className={styles.cardContentTitle}>{name}</h1>
-        <p className={styles.cardContentDescription}>{story}</p>
+      <div className={styles.content}>
+        <h1 className={styles.title}>{name}</h1>
+        <p className={styles.description}>{story}</p>
       </div>
     </div>
   );
