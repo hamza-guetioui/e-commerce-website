@@ -3,12 +3,16 @@ import React, { useState } from "react";
 import Logo from "./Logo";
 import Navigator from "./Navigator";
 import ClientOptions from "./ClientOptions";
+import Categories from "./Categories";
+
+import styles from "./Styles.module.css";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <>
+      {/* blur div covers the body if menu open */}
       <div
         className={` ${
           isMenuOpen ? "fixed z-10 opacity-60 w-full h-full bg-black" : ""
@@ -16,11 +20,13 @@ function Navbar() {
         onClick={() => setIsMenuOpen(false)}
       ></div>
 
-      <nav className="flex sticky z-10 bg-white top-0 justify-between items-center px-4 py-1 h-14 border-b">
+      <nav className={styles.navbar}>
         {/* logo */}
         <Logo />
         {/* Navigation */}
-        <Navigator isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+        <Navigator isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}>
+          <Categories />
+        </Navigator>
         {/* client options: search, favorites, and shopping cart */}
         <ClientOptions />
       </nav>

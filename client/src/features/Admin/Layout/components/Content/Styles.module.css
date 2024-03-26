@@ -1,0 +1,6 @@
+
+.content {
+    @apply col-span-8 p-3 text-white bg-slate-900 border-2 rounded-lg;
+}
+
+  

@@ -5,11 +5,12 @@
 }
 
 .container {
-  @apply flex mb-8 ml-4 lg:ml-32;
+  @apply flex mb-12 ml-4 lg:ml-28;
 }
 
  /* Intro Component styles */
 
+ 
 .intro {
   @apply min-w-36 md:w-64 md:min-w-64 p-4 mr-2 sm:mr-4 ;
 }

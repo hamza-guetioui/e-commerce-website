@@ -1,18 +1,76 @@
-"use client";
 import React from "react";
-import styles from "./NavStyles.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faAngleDown } from "@fortawesome/free-solid-svg-icons";
-
-import { NavigationPages } from "@/data";
 import Link from "next/link";
+import styles from "./Styles.module.css";
+import Button from "./Button";
 
-type navProps = {
+// Font Awesome Icons
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+
+// TypeScript
+type NavigatoreProps = {
   isMenuOpen: boolean;
   setIsMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  children: React.ReactNode;
 };
 
-function Navigator({ isMenuOpen, setIsMenuOpen }: navProps) {
+const links = [
+  {
+    id: 1,
+    name: "Home",
+    path: "/",
+  },
+  {
+    id: 2,
+    name: "Categories",
+    path: "#",
+  },
+  {
+    id: 3,
+    name: "Store",
+    path: "/store",
+  },
+  {
+    id: 4,
+    name: "Fashion",
+    path: "/fashion",
+  },
+  {
+    id: 5,
+    name: "Articles",
+    path: "/articles",
+  },
+  {
+    id: 6,
+    name: "More",
+    path: "#",
+  },
+];
+const options = [
+  {
+    id: 7,
+    name: "Contact Us",
+    path: "/contactUs",
+  },
+  {
+    id: 8,
+    name: "About Us",
+    path: "/about",
+  },
+  {
+    id: 9,
+    name: "FAQ's",
+    path: "/faqs",
+  },
+  {
+    id: 10,
+    name: "Terms & Conditions",
+    path: "/terms",
+  },
+];
+
+
+function Navigator({ isMenuOpen, setIsMenuOpen, children }: NavigatoreProps) {
   return (
     <>
       {/* links to different pages of the site */}
@@ -22,89 +80,41 @@ function Navigator({ isMenuOpen, setIsMenuOpen }: navProps) {
         </button>
       </div>
 
-      {/* Navigation Pages */}
-      <ul className={`${styles.nav} z-30 ${isMenuOpen ? "" : "hidden"}`}>
-        {NavigationPages.map((page) => {
+      <ul className={`${styles.navigation} z-30 ${isMenuOpen ? "" : "hidden"}`}>
+        {links.map((link) => {
+          if (link.name === "Categories") {
+            return (
+              <li key={link.id} className={`${styles.linkWrapper} group`}>
+                <Button>{link.name}</Button>
+                <div className={`${styles.dropDownMenu} group-hover:block`}>
+                  {children}
+                </div>
+              </li>
+            );
+          }
+          if (link.name === "More") {
+            return (
+              <li key={link.id} className={`${styles.linkWrapper} group`}>
+                <Button>{link.name}</Button>
+                <ul className={`${styles.moreOptionsMenu} group-hover:block`}>
+                  {options.map((option) => {
+                    return (
+                      <li key={option.id} className={`${styles.moreLinkWrapper}`} >
+                        <Link href={option.path} className={styles.link}>
+                          {option.name}
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </li>
+            );
+          }
           return (
-            <li key={page.name} className={`${styles.linkWrapper} group`}>
-              {page.name === "Categories" ? (
-                <>
-                  <Link href={"/store"} className={styles.pageLink}>
-                    {page.name}
-                    <FontAwesomeIcon
-                      icon={faAngleDown}
-                      className="ml-[6px] mt-[6px]"
-                    />
-                  </Link>
-                  <div className={`${styles.dropDownMenu} group-hover:block`}>
-                    {page.options?.map((option) => {
-                      if ("optionsGroupName" in option) {
-                        // categories Drop Menu
-                        return (
-                          <div key={option.optionsGroupName}>
-                            <span className={styles.subMenuGroup}>
-                              {option.optionsGroupName}
-                            </span>
-                            {option.categories.map((category) => (
-                              <div
-                                key={category.name}
-                                className={styles.categoryLinkWrapper}
-                              >
-                                <Link
-                                  href={
-                                    `/store?category=${category.path?.toString()}&opt=${
-                                      option.optionsGroupName
-                                    }` || "#"
-                                  }
-                                  className={styles.pageLink}
-                                >
-                                  {category.name}
-                                </Link>
-                              </div>
-                            ))}
-                          </div>
-                        );
-                      }
-                    })}
-                  </div>
-                </>
-              ) : page.name === "More" ? (
-                <React.Fragment key={page.name}>
-                  <Link href={"#"} className={`${styles.pageLink}`}>
-                    {page.name}
-                    <FontAwesomeIcon
-                      icon={faAngleDown}
-                      className="ml-[6px] mt-[6px]"
-                    />
-                  </Link>
-                  <ul className={`${styles.dropDownMenu} group-hover:block`}>
-                    {page.options?.map(
-                      (option) =>
-                        "name" in option &&
-                        "path" in option && (
-                          <li
-                            key={option.name}
-                            className={`${styles.moreLinkWrapper}`}
-                          >
-                            <Link
-                              href={`${option.path!}` || "#"}
-                              className={styles.pageLink}
-                            >
-                              {option.name}
-                            </Link>
-                          </li>
-                        )
-                    )}
-                  </ul>
-                </React.Fragment>
-              ) : (
-                <Link
-                  href={page.path?.toString() || "#"}
-                  className={styles.pageLink}
-                >
-                  {page.name}
-                </Link>
-              )}
+            <li key={link.id} className={`${styles.linkWrapper}`}>
+              <Link href={link.path} className={styles.link}>
+                {link.name}
+              </Link>
             </li>
           );
         })}
@@ -112,5 +122,4 @@ function Navigator({ isMenuOpen, setIsMenuOpen }: navProps) {
     </>
   );
 }
-
 export default Navigator;

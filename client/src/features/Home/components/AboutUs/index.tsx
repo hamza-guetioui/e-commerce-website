@@ -1,9 +1,11 @@
 import Image from "next/image";
 import React from "react";
 
+
 function AboutUs() {
+
   return (
-    <div className="flex-center md:w-10/12 m-auto  h-96">
+    <div className="flex-center md:w-10/12 m-auto mb-8  h-96">
       <Image
         src={"/images/about.jpg"}
         alt="about"

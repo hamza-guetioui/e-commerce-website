@@ -1,16 +1,17 @@
 import React from "react";
 import Link from "next/link";
-import styles from "../ShopSection.module.css";
+import styles from "./Styles.module.css";
 
 // TypeScript Interfaces
-interface Category {
-  id: number;
-  categoryName: string;
-}
-interface ParentCategory {
+
+interface Section {
   id: Number;
   categoryName: string;
   children: Category[];
+}
+interface Category {
+  id: number;
+  categoryName: string;
 }
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
@@ -31,30 +32,31 @@ const getCategories = async () => {
 async function Categories() {
   const categories = await getCategories();
   return (
-    <div className={styles.categoriesContainer}>
-      <div className={styles.categoryLinkWrapper}>
-        {/* All Categories Header */}
-        <Link href="/store" className={styles.pageLink}>
+    <div className={styles.categories}>
+      {/* All Categories Link */}
+      <div className={styles.category}>
+        <Link href="/store" className={styles.link}>
           All Categories
         </Link>
-        {/* Categories Looped through here */}
       </div>
-      {categories.map((parentCategory: ParentCategory) => (
-        <div key={parentCategory.id.toString()}>
+      
+      {/* Categories */}
+      {/* section = parentCategoty + Children (categories)*/}
+      {categories.map((section: Section) => (
+        <div key={section.id.toString()}>
           {/* Parent category */}
-          <Link href="#" className={styles.subMenuGroup}>
-            {parentCategory.categoryName}
+          <Link href="#" className={styles.parentCategory}>
+            {section.categoryName}
           </Link>
-          
+
           {/* Children categories */}
-          {parentCategory.children.map((category: Category) => (
-            <div key={category.id} className={styles.categoryLinkWrapper}>
+          {section.children.map((category: Category) => (
+            <div key={category.id} className={styles.category}>
               <Link
                 href={
-                  `/store?category=${category.categoryName}&opt=${parentCategory.categoryName}` ||
-                  "#"
+                  `/store?category=${category.categoryName}&opt=${section.categoryName}`
                 }
-                className={styles.pageLink}
+                className={styles.link}
               >
                 {category.categoryName}
               </Link>

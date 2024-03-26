@@ -1,0 +1,24 @@
+.container {
+  @apply w-screen h-screen flex justify-center items-center bg-slate-500;
+}
+.form {
+  @apply p-8 border-zinc-100 rounded shadow-lg bg-slate-900 w-4/12 flex flex-wrap justify-center;
+}
+.form > * {
+  @apply w-11/12 mb-6 ;
+}
+.title {
+  @apply text-2xl font-bold text-center text-slate-400 mb-6;
+}
+.input {
+  @apply border-b-2 border-zinc-100 p-2 bg-inherit  text-white focus:outline-none;
+}
+.checkboxLabel {
+    @apply pl-4 text-white;
+}
+.checkbox {
+  @apply mr-3;
+}
+.submitButton {
+  @apply py-2 px-6 text-white font-bold mb-0 border-2 border-zinc-100 w-fit rounded-lg;
+}

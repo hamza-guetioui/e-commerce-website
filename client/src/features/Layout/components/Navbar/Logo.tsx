@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./NavStyles.module.css"
+import styles from "./Styles.module.css"
 
 function Logo() {
   return (

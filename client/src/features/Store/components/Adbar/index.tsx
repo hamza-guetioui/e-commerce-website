@@ -1,10 +1,10 @@
 import React from "react";
 import Image from "next/image";
-import styles from "../ShopSection.module.css";
+import styles from "../Styles.module.css";
 
 function AdSidbar() {
   return (
-    <div className={styles.adSidebar}>
+    <div className={styles.adbar}>
       <Image
         className="w-full max-w-full h-full"
         src="/images/ad.png"

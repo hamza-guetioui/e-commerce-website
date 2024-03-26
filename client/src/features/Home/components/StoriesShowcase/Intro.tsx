@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import styles from "./Styles.module.css";
 import ScrollController from "@/features/Home/shared/components/ScrollController";

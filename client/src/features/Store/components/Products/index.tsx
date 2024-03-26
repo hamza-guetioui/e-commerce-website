@@ -1,5 +1,5 @@
 import Card from "@/features/shared/components/Card";
-import styles from "../ShopSection.module.css";
+import styles from "../Styles.module.css";
 
 interface Product {
   id: number;
@@ -28,7 +28,7 @@ async function Products() {
   const products = await getProducts();
 
   return (
-      <div className={styles.productsContainer}>
+      <div className={styles.products}>
       {products && products.map((product: Product) => (
         <Card key={product.id} {...product} />
       ))}

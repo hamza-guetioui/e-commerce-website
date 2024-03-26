@@ -52,7 +52,7 @@ const swiperData = [
 //   const response = await fetch()
 // }
 
-async function SlidePanel() {
+function SlidePanel() {
 
   // const swiperData = await getSlideSwiper()
   return (
