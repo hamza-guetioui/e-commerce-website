@@ -1,19 +1,18 @@
-"use client";
-import { useRouter } from "next/navigation";
 
 function Filter() {
-  const router = useRouter();
-  function hundleClick() {
-    router.push("http://localhost:3000/products?name='idokan'");
-  }
+
   return (
-    <div className="w-full bg-gray-300 text-center">
-      <button
-        onClick={hundleClick}
-        className="py-1 px-5 border-2 border-black rounded-md text-bold"
-      >
-        filter
-      </button>
+    <div className="w-full p-2 flex gap-7 justify-center items-center bg-gray-300 text-center">
+      <select className="py-2 px-5 text-base font-semibold bg-inherit border-2 rounded text-slate-500 hover:text-slate-900 border-slate-500 " >
+        <option label="color"></option>
+      </select >
+      <select className="py-2 px-5 text-base font-semibold bg-inherit border-2 rounded  text-slate-500 hover:text-slate-900 border-slate-500 " >
+      <option label="size"></option>
+      </select>
+      <select className="py-2 px-5 text-base font-semibold bg-inherit border-2 rounded  text-slate-500 hover:text-slate-900 border-slate-500 ">
+      <option label="sort"></option>
+      </select>
+      
     </div>
   );
 }

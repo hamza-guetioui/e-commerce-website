@@ -21,7 +21,7 @@
   @apply block text-sm md:text-base;
 }
 .description {
-  @apply text-xs md:text-base font-normal mb-4;
+  @apply text-xs md:text-base font-normal mb-4 line-clamp-3;
 }
 
  /* Stories Section Cards stylesheet */

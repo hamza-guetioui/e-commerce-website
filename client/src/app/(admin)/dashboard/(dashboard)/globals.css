@@ -1,38 +1,69 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+form {
+  @apply grid grid-rows-8 gap-4 relative justify-center w-full h-full;
+}
+form > h1 {
+  @apply row-span-1 px-8 my-4 text-center text-4xl text-gray-600 font-bold;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+form .container {
+  @apply row-span-6 grid grid-cols-11 w-full flex-grow  gap-8 px-8;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-} */
-
-.flex-center {
-  @apply flex justify-center items-center;
+form .container .inputs-group {
+  @apply col-span-7 h-full overflow-y-auto overflow-x-hidden;
 }
 
-/* buttons main style */
-.button {
-  @apply p-2 text-base font-extrabold border-2
-   border-black rounded-md my-4 mt-2 bg-black text-white
-   brightness-90 hover:brightness-100;
+form .container .image-container {
+  @apply col-span-4;
+}
+.dispaly-image {
+  @apply border-2 flex justify-center items-end border-slate-600 rounded-lg bg-inherit h-5/6 bg-center bg-no-repeat bg-contain;
+}
+.dispaly-image input {
+  @apply border-none  border-2 border-slate-600 rounded-lg bg-inherit;
+}
+
+label {
+  @apply font-semibold text-lg w-full block ml-2 tracking-wider;
+}
+
+input,
+textarea,
+select {
+  @apply w-full h-11 border-2 border-slate-600 rounded-lg bg-inherit block p-2  pr-16 mb-4 outline-none;
+}
+textarea {
+  @apply resize-none h-36;
+}
+
+form .buttons {
+  @apply row-span-1 w-full h-fit bg-slate-600 p-3 flex items-center justify-end gap-4;
+}
+form button[type="submit"] {
+  @apply w-28 px-6 py-1 font-medium text-lg rounded-lg bg-green-500;
+}
+form button[name="cancel"] {
+  @apply w-28 px-6 py-1 font-medium text-lg rounded-lg border-2 border-zinc-400;
+}
+
+.inputs-group::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  background-color: #2e3a4d;
+}
+
+.inputs-group::-webkit-scrollbar {
+  border-radius: 6px;
+  width: 8px;
+  background-color: ##4b5563;
+}
+
+.inputs-group::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #555;
 }

@@ -14,18 +14,20 @@ app.use(cors({
 
 // App Middlewares
 app.use(express.static("public"))
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 // Import Routes
 const categoryRouters = require('./routers/Category.routes');
 const productRouters = require('./routers/Product.routes');
 const imageRouters = require('./routers/Image.routes')
+const panelRouters = require('./routers/Panel.routes')
 
 // Routers 
 app.use('/categories', categoryRouters);
 app.use('/products', productRouters);
 app.use('/images', imageRouters);
+app.use('/panel', panelRouters);
 
 
 

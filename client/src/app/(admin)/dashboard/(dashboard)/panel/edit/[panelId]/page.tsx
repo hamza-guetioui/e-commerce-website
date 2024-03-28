@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import EditPanel from "@/features/Admin/pages/Panel/edit";
 
 function page() {
   return (
-    <div>page</div>
-  )
+    <>
+      <EditPanel />
+    </>
+  );
 }
 
-export default page
+export default page;
