@@ -1,11 +1,14 @@
 import React from "react";
 
-import Input from "./Input";
-import TextArea from "./TextArea";
-import ImageHandler from "./ImageHandler";
-import Select from "./Select";
+import Input from "@/features/Admin/shared/components/inputs/Input";
+import TextArea from "@/features/Admin/shared/components/inputs/TextArea";
+import ImageHandler from "@/features/Admin/shared/components/inputs/ImageHandler";
+import Select from "@/features/Admin/shared/components/inputs/Select";
 
-function Body() {
+
+
+function FormInputs() {
+
   return (
     <div className="container">
       <div className="inputs-group">
@@ -21,4 +24,4 @@ function Body() {
   );
 }
 
-export default Body;
+export default FormInputs;

@@ -1,9 +1,9 @@
 import React from "react";
 
-function Header() {
+function Header({children}:{ children: React.ReactNode}) {
   return (
-    <h1 className="row-span-1 px-8 my-4 text-center text-4xl text-gray-600 font-bold">
-      Create Panel
+    <h1 >
+      {children}
     </h1>
   );
 }

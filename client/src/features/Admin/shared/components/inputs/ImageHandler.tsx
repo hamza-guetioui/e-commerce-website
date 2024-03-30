@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from "react";
 
 function ImageDisplay() {
+    
   const [uploadedImage, setUploadedImage] = useState<File | null>(null);
   const displayImageRef = useRef<HTMLDivElement>(null);
 

@@ -1,10 +1,13 @@
 import React from "react";
-import Header from "./Header";
-import Buttons from "./Buttons";
-import Body from "./Body";
+import Form from "@/features/Admin/shared/components/Form";
+import FormInputs from "./components/FromInputs";
 
 async function createPanel(formData: FormData) {
   "use server";
+
+  const data = Object.fromEntries(formData);
+  delete data[Object.keys(data)[0]]; // remove $ACTION_ properties.
+
   try {
     const response = await fetch("http://localhost:4040/panel", {
       headers: {
@@ -12,7 +15,7 @@ async function createPanel(formData: FormData) {
       },
       method: "POST",
       body: JSON.stringify({
-        title: formData.get("title"),
+        data,
       }),
     });
     if (response.ok) {
@@ -29,14 +32,12 @@ async function createPanel(formData: FormData) {
   }
 }
 
-function Form() {
+function index() {
   return (
-    <form action={createPanel}>
-      <Header>{"Create a Panel"}</Header>
-      <Body />
-      <Buttons />
-    </form>
+    <Form action={createPanel} header="Create a Panel">
+       <FormInputs/>
+    </Form>
   );
 }
 
-export default Form;
+export default index;

@@ -6,11 +6,11 @@ form {
   @apply grid grid-rows-8 gap-4 relative justify-center w-full h-full;
 }
 form > h1 {
-  @apply row-span-1 px-8 my-4 text-center text-4xl text-gray-600 font-bold;
+  @apply row-span-1 px-8 mt-4 text-center text-4xl text-gray-600 font-bold;
 }
 
 form .container {
-  @apply row-span-6 grid grid-cols-11 w-full flex-grow  gap-8 px-8;
+  @apply row-span-6 grid grid-cols-11 w-full flex-grow gap-8 px-8;
 }
 
 form .container .inputs-group {
@@ -30,15 +30,29 @@ form .container .image-container {
 label {
   @apply font-semibold text-lg w-full block ml-2 tracking-wider;
 }
+form .input-wrapper {
+  @apply relative w-11/12 h-fit;
+}
+/* span shown input counter, or an icon for select */
+form .input-wrapper span{
+  @apply absolute bottom-1 right-3 text-slate-200
+}
 
-input,
+input[type="text"],
+input[type="email"],
+input[type="password"],
 textarea,
-select {
-  @apply w-full h-11 border-2 border-slate-600 rounded-lg bg-inherit block p-2  pr-16 mb-4 outline-none;
+select,
+.selectInput {
+  @apply w-full h-11 border-2 border-slate-600 rounded-lg bg-inherit block p-2  pr-16 mb-3 outline-none;
+}
+.selectInput{
+  @apply flex justify-start items-center flex-wrap h-fit gap-1;
 }
 textarea {
   @apply resize-none h-36;
 }
+
 
 form .buttons {
   @apply row-span-1 w-full h-fit bg-slate-600 p-3 flex items-center justify-end gap-4;
@@ -50,6 +64,10 @@ form button[name="cancel"] {
   @apply w-28 px-6 py-1 font-medium text-lg rounded-lg border-2 border-zinc-400;
 }
 
+form button[type="submit"]:active,
+button[name="cancel"]:active {
+  @apply brightness-90;
+}
 .inputs-group::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   border-radius: 6px;

@@ -1,10 +1,10 @@
 import React from "react";
 import EditPanel from "@/features/Admin/pages/Panel/edit";
 
-function page() {
+function page({ params }: { params: { panelId: string } }) {
   return (
     <>
-      <EditPanel />
+      <EditPanel id={params.panelId} />
     </>
   );
 }
