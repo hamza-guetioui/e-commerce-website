@@ -2,25 +2,34 @@ import React from "react";
 
 import Input from "@/features/Admin/shared/components/inputs/Input";
 import TextArea from "@/features/Admin/shared/components/inputs/TextArea";
-import ImageHandler from "@/features/Admin/shared/components/inputs/ImageHandler";
-import Select from "@/features/Admin/shared/components/inputs/Select";
+import FileInput from "@/features/Admin/shared/components/inputs/FileInput";
+import SelectInput from "@/features/Admin/shared/components/inputs/SelectInput";
 
-
+const types = [
+  { id: "3", name: "slide" },
+  { id: "4", name: "ad" },
+  { id: "6", name: "explore" },
+];
 
 function FormInputs() {
-
   return (
-    <div className="container">
-      <div className="inputs-group">
-        <Input type="text" name="title" length={20} />
-        <TextArea name="description" length={255} />
-        <Input type="text" name="path" length={50} />
-        <Select />
+    <>
+      <div className="inputs-section">
+        <Input type="text" name="title" label="Title" length={20} />
+        <TextArea name="description" label="Description" length={255} />
+        <Input type="text" name="path" label="Path" length={50} />
+        <SelectInput
+          id="typeRadio"
+          type="radio"
+          name="type"
+          label="Type"
+          data={types}
+        />
       </div>
-      <div className="image-container">
-        <ImageHandler />
+      <div className="files-section">
+        <FileInput name="image" label="Panel Image" accept=".jpg,.jpeg,.png" />
       </div>
-    </div>
+    </>
   );
 }
 

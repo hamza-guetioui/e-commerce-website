@@ -1,0 +1,20 @@
+/* form items */
+.selectInput {
+  @apply w-full h-fit border-2 border-slate-600 rounded-lg bg-inherit p-2 pr-16 outline-none
+ flex justify-start items-center flex-wrap gap-1;
+}
+
+.selectPlaceholder {
+  @apply text-slate-400 opacity-65;
+}
+.selectedOption {
+  @apply px-4 py-1 rounded-lg bg-green-500;
+}
+.dropDownMenu {
+  @apply flex justify-start items-center flex-wrap absolute bg-slate-900 z-30
+     right-0 top-full  w-9/12 p-2 border-2 border-slate-500 rounded-md gap-2;
+}
+.option {
+  @apply flex items-center w-fit gap-4 text-sm
+     px-5 py-1 border-2 rounded-full border-slate-600;
+}

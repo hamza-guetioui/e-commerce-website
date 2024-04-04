@@ -1,6 +1,5 @@
 require('dotenv').config();
 
-const path = require('node:path');
 const express = require('express');
 const bodyParser = require('body-parser')
 const app = express();
@@ -11,6 +10,9 @@ app.use(cors({
     origin: 'http://localhost:3000',
     optionsSuccessStatus: 200
 }));
+
+const Panel = require("./models/Panel.model")
+Panel.sync({ force: true })
 
 // App Middlewares
 app.use(express.static("public"))

@@ -1,21 +1,24 @@
 import React from "react";
+import "./Style.css";
 
-import Header from "./Header";
-import Buttons from "./Buttons";
+import Header from "./components/Header";
+import Buttons from "./components/Buttons";
 
 type FormProps = {
-  action: (formData: FormData) => Promise<void>;
   header: string;
+  action: (formData: FormData) => Promise<void>;
   children: React.ReactNode;
 };
 
-function Form({ action, header, children }: FormProps) {
+function Form({ header, action, children }: FormProps) {
   return (
-    <form action={action}>
+    <div className="container">
       <Header>{header}</Header>
-      {children}
-      <Buttons />
-    </form>
+      <form action={action}>
+        <div className="form-content">{children}</div>
+        <Buttons />
+      </form>
+    </div>
   );
 }
 

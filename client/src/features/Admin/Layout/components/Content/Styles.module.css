@@ -1,6 +1,6 @@
 
 .content {
-    @apply col-span-8 text-white bg-slate-900 border-2 rounded-lg overflow-hidden;
+    @apply col-span-9 text-white bg-slate-900 border-2 rounded-lg overflow-hidden;
 }
 
   

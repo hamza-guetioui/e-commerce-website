@@ -1,0 +1,7 @@
+.fileWrapper {
+  @apply flex-grow flex flex-col;
+}
+.displayFile {
+  @apply flex justify-center items-end flex-grow p-4 border-2 border-slate-600 
+    rounded-lg bg-inherit bg-center bg-no-repeat bg-contain;
+}

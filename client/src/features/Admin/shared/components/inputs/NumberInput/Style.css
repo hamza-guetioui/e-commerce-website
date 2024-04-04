@@ -1,0 +1,16 @@
+
+.controller {
+  @apply  absolute overflow-hidden h-11  w-11 flex flex-col items-center justify-around left-full bottom-0 border-2 border-slate-600 rounded-lg bg-inherit ml-1;
+}
+.controller div {
+  @apply w-full h-1/2 text-center;
+}
+.controller div:hover {
+  @apply bg-slate-500;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0; /* Optionally, you can also remove any margin */
+}

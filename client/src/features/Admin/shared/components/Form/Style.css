@@ -1,0 +1,101 @@
+.container {
+  @apply grid grid-rows-11 w-full h-full min-h-full gap-4;
+}
+/* form header "title" */
+.header {
+  @apply row-span-1 mt-2 text-center text-4xl text-gray-600 font-bold;
+}
+
+/* form style */
+form {
+  @apply row-span-10 relative pb-16;
+}
+form .form-content {
+  @apply flex justify-start gap-4 h-full overflow-y-auto overflow-x-hidden py-4
+  flex-col px-4
+   lg:flex-row lg:px-8;
+}
+
+/* form sections style*/
+form .form-content .inputs-section {
+  @apply w-3/5 flex flex-col gap-2;
+}
+form .form-content .files-section {
+  @apply w-2/5 flex flex-col gap-4;
+}
+
+/* form section items style (each item have a parent div) */
+label {
+  @apply font-semibold text-lg w-full block ml-2 tracking-wider;
+}
+
+form .input-wrapper {
+  @apply relative w-11/12 h-fit;
+}
+form .input-wrapper:has(> input[type="number"]) {
+  @apply relative w-fit h-fit;
+}
+
+form .input-wrapper .counter,
+form .input-wrapper .icon {
+  @apply absolute bottom-1 right-3 text-slate-200;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  @apply w-full h-11 border-2 border-slate-600 rounded-lg bg-inherit p-2 pr-16 outline-none;
+}
+input[type="number"] {
+  @apply h-11 border-2 border-slate-600 rounded-lg bg-inherit p-2 pr-11 outline-none;
+}
+textarea {
+  @apply resize-none h-36;
+}
+
+/* * for the select input, the style settes localy 
+"Admin/pages/shared/inputs/Select/components/Style.module.css" */
+
+/* button styles */
+.buttons {
+  @apply flex items-center justify-end gap-4 px-5 py-2
+   absolute bottom-0 w-full h-fit bg-slate-600;
+}
+
+form button[type="submit"] {
+  @apply w-28 px-6 py-1 font-medium text-lg rounded-lg bg-green-500 border-2 border-green-500;
+}
+form button[name="cancel"] {
+  @apply w-28 px-6 py-1 font-medium text-lg rounded-lg border-2 border-zinc-400;
+}
+
+form button[type="submit"]:active,
+button[name="cancel"]:active {
+  @apply brightness-90;
+}
+
+/* scrollbar style */
+.form-content::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  background-color: #2e3a4d;
+}
+
+.form-content::-webkit-scrollbar {
+  border-radius: 6px;
+  width: 8px;
+  background-color: ##4b5563;
+}
+
+.form-content::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #555;
+}
+
+/* remove auto fill color from inputs */
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 0s 600000s, color 0s 600000s !important;
+}
