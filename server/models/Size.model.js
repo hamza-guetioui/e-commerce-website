@@ -7,7 +7,7 @@ const Size = sequelize.define("size", {
         primaryKey: true,
         autoIncrement: true
     },
-    sizeName: {
+    name: {
         type: DataTypes.STRING(50),
         allowNull: false,
         unique: true,

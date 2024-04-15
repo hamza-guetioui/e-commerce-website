@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./Styles.module.css"
+import styles from "../Styles.module.css"
 
-function Logo() {
+function index() {
   return (
     <div className="text-center basis-full order-2 md:order-1 md:basis-auto">
       {/* <Image src="/assests/logo.jpg" alt="logo" width={30} height={30} className=" mr-1 rounded" /> */}
@@ -12,4 +12,5 @@ function Logo() {
   );
 }
 
-export default Logo;
+
+export default index;

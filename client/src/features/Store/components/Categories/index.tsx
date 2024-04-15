@@ -6,12 +6,12 @@ import styles from "./Styles.module.css";
 
 interface Section {
   id: Number;
-  categoryName: string;
+  name: string;
   children: Category[];
 }
 interface Category {
   id: number;
-  categoryName: string;
+  name: string;
 }
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
@@ -46,7 +46,7 @@ async function Categories() {
         <div key={section.id.toString()}>
           {/* Parent category */}
           <Link href="#" className={styles.parentCategory}>
-            {section.categoryName}
+            {section.name}
           </Link>
 
           {/* Children categories */}
@@ -54,11 +54,11 @@ async function Categories() {
             <div key={category.id} className={styles.category}>
               <Link
                 href={
-                  `/store?category=${category.categoryName}&opt=${section.categoryName}`
+                  `/store?category=${category.name}&opt=${section.name}`
                 }
                 className={styles.link}
               >
-                {category.categoryName}
+                {category.name}
               </Link>
             </div>
           ))}

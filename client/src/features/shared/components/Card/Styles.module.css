@@ -1,35 +1,31 @@
+
 .card {
-  @apply relative rounded-xl overflow-hidden shadow-2xl brightness-75 hover:brightness-100 
-    min-w-44 min-h-80 h-80;
+  @apply relative w-44 min-w-44 h-64 rounded-lg bg-slate-50 overflow-hidden;
 }
 
 .image {
-  @apply object-cover w-full max-w-full h-2/4 rounded-xl;
+  @apply h-3/5 rounded-lg object-cover object-right;
 }
 
 .content {
-  @apply p-4 pb-4;
+  @apply  px-2 pb-2 pt-1;
 }
 
+
 .name {
-  @apply font-bold mb-2 text-xs text-purple-700
-    sm:text-xl 
-    md:text-2xl
-    lg:text-lg;
+  @apply text-base font-extrabold;
 }
 
 .description {
-  @apply text-xs mb-2 max-h-12 overflow-hidden 
-    md:max-h-20 md:text-xl 
-    lg:text-base;
+  @apply text-xs;
 }
 
 .price {
-  @apply font-bold text-xs md:text-xl lg:text-sm;
+  @apply text-sm font-extrabold;
 }
 
 .heartIcon {
-  @apply absolute top-2 right-2 text-xl md:text-2xl text-slate-100 bg-slate-300 rounded-full p-2 bg-opacity-75;
+  @apply absolute top-2 right-2 text-xl  text-slate-100 bg-slate-300/75 rounded-full p-2;
 }
 
 .shoppingCartIcon {

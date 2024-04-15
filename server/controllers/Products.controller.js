@@ -1,4 +1,5 @@
 const Product = require('../models/Product.model')
+const ProductItem = require('../models/ProductItem.model')
 
 
 
@@ -7,7 +8,7 @@ async function index(req, res) {
         const products = await Product.findAll({
             attributes: ['id', 'name', 'description', 'image'],
         });
-        
+
         res.status(200).json({
             status: "success",
             message: "Retrieved categories successfully",

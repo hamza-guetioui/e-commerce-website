@@ -1,5 +1,6 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require('../utils/database')
+const PanelTypes = require('./PanelTypes.model')
 
 const Panel = sequelize.define('Panel', {
     id: {
@@ -8,21 +9,17 @@ const Panel = sequelize.define('Panel', {
         autoIncrement: true
     },
     title: {
-        type: DataTypes.STRING(20),
+        type: DataTypes.STRING(50),
         allowNull: false,
         validate: {
             is: {
                 args: /^[a-zA-Z]+[a-zA-Z0-9\s]*$/,
                 msg: "Panel title must contain only letters, numbers, and spaces."
             },
-            isEmpty: {
-                args: false,
-                msg: "Panel title cannot be empty."
-            }
         }
     },
     description: {
-        type: DataTypes.STRING(100),
+        type: DataTypes.STRING,
         allowNull: false,
         validate: {
             notNull: { msg: 'Panel description is required.' },
@@ -41,24 +38,22 @@ const Panel = sequelize.define('Panel', {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-            notEmpty: {
-                args: true,
-                msg: "Panel image cannot be empty."
-            }
-        }
+            notNull: { msg: 'Panel image is required.' },
+            notEmpty: { msg: 'Panel image cannot be empty.' },
+        },
     },
-    type: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-            isIn: [['slider', 'Advertisement', 'Discovery']]
-        }
-
+    panelTypeId: {
+        type: DataTypes.INTEGER,
+        allowNull: false
     }
-
 }, {
     timestamps: true,
     paranoid: true
 });
+
+
+// PanelTypes, Panel => Many-to-One
+PanelTypes.hasMany(Panel, { foreignKey: { allowNull: false }, onDelete: 'CASCADE' })
+Panel.belongsTo(PanelTypes, { foreignKey: { allowNull: false }, onDelete: 'CASCADE' })
 
 module.exports = Panel

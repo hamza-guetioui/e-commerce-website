@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const path = require('node:path');
+const Panel = require('../controllers/Panels.controller')
 
 // const Panel = require('../controllers/Panel.controller')
 const multer = require('multer')
@@ -14,12 +14,14 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage: storage });
 
-router.post('/', upload.single('image'), (req, res) => {
-    const data = req.body.data
-    console.log(req.file)
-    console.log(req.body)
-    res.send(data)
-})
+router.route('/')
+    .get(Panel.index)
+    .post(upload.single('image'), Panel.store)
+
+router.route('/:id')
+    .put(upload.single('image'), Panel.update)
+    .delete(Panel.destroy)
+
 
 
 module.exports = router

@@ -8,7 +8,7 @@ const { success, error } = require('../utils/responseFormat')
 async function index(req, res) {
     try {
         const categories = await Category.findAll({
-            attributes: ['id', 'categoryName'],
+            attributes: ['id', 'name'],
             include: [
                 {
                     model: Category,
@@ -17,7 +17,7 @@ async function index(req, res) {
                         model: CategoryRelation,
                         attributes: [],
                     },
-                    attributes: ['id', 'categoryName'],
+                    attributes: ['id', 'name'],
                     where: { '$ParentOf.id$': { [Sequelize.Op.ne]: null } }, // Filter out categories without children
                 },
             ],
@@ -28,7 +28,7 @@ async function index(req, res) {
         const modifiedCategories = categories.map(category => {
             return {
                 id: category.id,
-                categoryName: category.categoryName,
+                name: category.name,
                 children: category.ParentOf
             };
         });
@@ -36,7 +36,7 @@ async function index(req, res) {
         res.status(200).json(success("Retrieved categories successfully", modifiedCategories));
 
     } catch (err) {
-        res.status(500).json(error(err.toString()))
+        res.status(500).json(error(err.message ? err.message : err.toString()))
     }
 }
 

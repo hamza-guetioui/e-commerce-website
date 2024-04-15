@@ -1,18 +1,12 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Link from "next/link";
-import styles from "./Styles.module.css";
+import styles from "../Styles.module.css";
 import Button from "./Button";
 
 // Font Awesome Icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-
-// TypeScript
-type NavigatoreProps = {
-  isMenuOpen: boolean;
-  setIsMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  children: React.ReactNode;
-};
 
 const links = [
   {
@@ -69,8 +63,9 @@ const options = [
   },
 ];
 
+function Navigator({ children }: { children: React.ReactNode }) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-function Navigator({ isMenuOpen, setIsMenuOpen, children }: NavigatoreProps) {
   return (
     <>
       {/* links to different pages of the site */}
@@ -79,7 +74,6 @@ function Navigator({ isMenuOpen, setIsMenuOpen, children }: NavigatoreProps) {
           <FontAwesomeIcon icon={faBars} />
         </button>
       </div>
-
       <ul className={`${styles.navigation} z-30 ${isMenuOpen ? "" : "hidden"}`}>
         {links.map((link) => {
           if (link.name === "Categories") {
@@ -99,7 +93,10 @@ function Navigator({ isMenuOpen, setIsMenuOpen, children }: NavigatoreProps) {
                 <ul className={`${styles.moreOptionsMenu} group-hover:block`}>
                   {options.map((option) => {
                     return (
-                      <li key={option.id} className={`${styles.moreLinkWrapper}`} >
+                      <li
+                        key={option.id}
+                        className={`${styles.moreLinkWrapper}`}
+                      >
                         <Link href={option.path} className={styles.link}>
                           {option.name}
                         </Link>

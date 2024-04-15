@@ -5,11 +5,11 @@ import styles from "./Styles.module.css";
 // TypeScript Interfaces
 interface Category {
   id: number;
-  categoryName: string;
+  name: string;
 }
 interface ParentCategory {
   id: Number;
-  categoryName: string;
+  name: string;
   children: Category[];
 }
 
@@ -37,19 +37,19 @@ async function Categories() {
         return (
           <div key={parentCategory.id.toString()}>
             <Link
-              href={`/store?section=${parentCategory.categoryName}`}
+              href={`/store?section=${parentCategory.name}`}
               className={styles.parentCategory}
             >
-              {parentCategory.categoryName}
+              {parentCategory.name}
             </Link>
 
             {parentCategory.children.map((category: Category) => (
               <div key={category.id} className={styles.childCategory}>
                 <Link
-                  href={`/store?section=${parentCategory.categoryName}&category=${category.categoryName}`}
+                  href={`/store?section=${parentCategory.name}&category=${category.name}`}
                   className={styles.link}
                 >
-                  {category.categoryName}
+                  {category.name}
                 </Link>
               </div>
             ))}

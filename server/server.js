@@ -11,8 +11,9 @@ app.use(cors({
     optionsSuccessStatus: 200
 }));
 
-const Panel = require("./models/Panel.model")
-Panel.sync({ force: true })
+// const Panel = require("./models/Panel.model")
+
+// Color.sync({ alter: true })
 
 // App Middlewares
 app.use(express.static("public"))
@@ -23,13 +24,14 @@ app.use(bodyParser.json())
 const categoryRouters = require('./routers/Category.routes');
 const productRouters = require('./routers/Product.routes');
 const imageRouters = require('./routers/Image.routes')
-const panelRouters = require('./routers/Panel.routes')
+const panelRouters = require('./routers/Panel.routes');
+const { Sequelize } = require('sequelize');
 
 // Routers 
 app.use('/categories', categoryRouters);
 app.use('/products', productRouters);
 app.use('/images', imageRouters);
-app.use('/panel', panelRouters);
+app.use('/panels', panelRouters);
 
 
 

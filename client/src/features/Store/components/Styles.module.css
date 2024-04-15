@@ -1,7 +1,7 @@
 
 /* Products Section Styles */
 .products {
-  @apply grid grid-cols-4 gap-4 scroll-smooth col-span-7;
+  @apply flex justify-start flex-wrap items-center gap-4 scroll-smooth col-span-7;
 }
 
 /* Ad Section Styles */
@@ -9,12 +9,3 @@
   @apply col-span-2 w-full h-full bg-green-500;
 }
 
-/* Drop Menu Styles  */
-.dropDownMenu {
-  @apply absolute px-4 pb-4 top-0 left-full w-[calc(100%+1rem)] hidden text-gray-700 rounded-md  bg-slate-300/95 
-     md:top-[95%] md:left-8 md:w-56;
-}
-
-.moreLinkWrapper {
-  @apply relative p-2 border-b last:border-none;
-}

@@ -24,7 +24,7 @@ function Card({ name, description, image, price }: CardProps) {
       <FontAwesomeIcon icon={faCartPlus} className={styles.shoppingCartIcon} />
       <Image
         className={styles.image}
-        src={`${apiUrl}/images?imageSrc=${image}`}
+        src={`${apiUrl}/images?src=${image}`}
         alt="Card image"
         width={300}
         height={300}
@@ -33,7 +33,7 @@ function Card({ name, description, image, price }: CardProps) {
       <div className={styles.content}>
         <h1 className={styles.name}>{name}</h1>
         <p className={styles.description}>{description}</p>
-        <span className={styles.price}>{price}</span>
+        <span className={styles.price}>{price}144.99 MAD</span>
       </div>
     </div>
   );

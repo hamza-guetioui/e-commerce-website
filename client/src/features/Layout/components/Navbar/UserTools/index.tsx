@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Styles.module.css"
+import styles from "../Styles.module.css"
 
 // fontAwsome icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,7 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 
-function ClientOptions() {
+function index() { 
   return (
     <div className="text-right basis-full md:basis-auto order-3">
       {/* search-icon */}
@@ -28,4 +28,4 @@ function ClientOptions() {
   );
 }
 
-export default ClientOptions;
+export default index;

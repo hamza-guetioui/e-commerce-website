@@ -27,7 +27,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`bg-[#b9b9b945] ${inter.className} `}>
+      <body className={`bg-slate-300/45 ${inter.className} `}>
         <main className="w-full">
           <LayoutComponents>
             <AdminProvider>{children}</AdminProvider>

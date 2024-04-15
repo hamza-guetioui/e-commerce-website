@@ -7,7 +7,7 @@ export default function Store(){
     return (
       <>
         <Filter />
-        <div className="grid grid-cols-12 gap-4 p-4">
+        <div className="grid grid-cols-12  gap-4 p-4">
           <Categories />
           <Products/>
           <Adbar />

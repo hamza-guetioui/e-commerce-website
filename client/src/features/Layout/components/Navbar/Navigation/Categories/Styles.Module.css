@@ -1,12 +1,12 @@
 /* categories Section Styles */
 .categories {
-  @apply col-span-3 border rounded-lg h-fit p-2 bg-slate-300/95;
+  @apply border rounded-lg  h-fit p-2 bg-slate-300/95
 }
 .parentCategory {
-  @apply text-xs font-bold ml-3 border-b border-red-950;
+  @apply text-sm font-bold ml-3 border-b border-red-950;
 }
 .category {
-  @apply flex items-center hover:underline font-bold ml-3 border-b last:border-none text-sm
+  @apply flex w-fit items-center hover:underline font-bold ml-3 border-b last:border-none text-sm p-1
       sm:mx-2 
       lg:mx-4 lg:p-1;
 }

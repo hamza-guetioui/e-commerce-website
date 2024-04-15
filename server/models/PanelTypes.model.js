@@ -1,7 +1,7 @@
-const { DataTypes } = require('sequelize');
+const { DataTypes } = require("sequelize");
 const sequelize = require('../utils/database')
 
-const Color = sequelize.define("color", {
+const PanelTypes = sequelize.define("panelType", {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -10,7 +10,7 @@ const Color = sequelize.define("color", {
     name: {
         type: DataTypes.STRING(50),
         allowNull: false,
-        unique: true ,
+        unique: true,
         validate: {
             is: {
                 args: /^[a-zA-Z]+[a-zA-Z\s]*$/,
@@ -22,4 +22,4 @@ const Color = sequelize.define("color", {
     timestamps: false
 })
 
-module.exports = Color;
+module.exports  = PanelTypes

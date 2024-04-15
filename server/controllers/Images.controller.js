@@ -2,7 +2,7 @@ const path = require('path');
 const fs = require('fs');
 
 function index(req, res) {
-    const imageSrc = req.query.imageSrc;
+    const imageSrc = req.query.src;
     
     if (!imageSrc) {
         return res.status(400).send("Missing imageSrc parameter");

@@ -91,4 +91,4 @@ ProductItem.hasMany(Image, { foreignKey: { allowNull: false }, onDelete: 'CASCAD
 Image.belongsTo(ProductItem, { foreignKey: { allowNull: false }, onDelete: 'CASCADE' })
 
 
-module.exports = { ProductItem, ProductsCategory }
+module.exports = ProductItem

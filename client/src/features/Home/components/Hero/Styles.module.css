@@ -2,7 +2,7 @@
   --box-shadow-custom: -1px 20px 20px -16px rgba(0, 0, 0, 0.24);
   --height-custom: calc(100vh - 5rem);
 
-  @apply flex justify-center items-center w-full p-2 rounded-bl-lg 
+  @apply flex justify-center items-center flex-col w-full p-2 rounded-bl-lg 
         rounded-br-lg h-custom shadow-custom gap-3 mb-12
         lg:flex-row lg:p-4;
 }

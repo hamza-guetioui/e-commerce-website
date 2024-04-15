@@ -6,9 +6,9 @@ import FileInput from "@/features/Admin/shared/components/inputs/FileInput";
 import SelectInput from "@/features/Admin/shared/components/inputs/SelectInput";
 
 const types = [
-  { id: "3", name: "slide" },
-  { id: "4", name: "ad" },
-  { id: "6", name: "explore" },
+  { id: "1", name: "slider" },
+  { id: "2", name: "discovery" },
+  { id: "3", name: "advertisement" },
 ];
 
 function FormInputs() {
