@@ -7,6 +7,12 @@ async function index(req, res) {
     try {
         const products = await Product.findAll({
             attributes: ['id', 'name', 'description', 'image'],
+            include: [
+                {
+                    model: ProductItem,
+                    attributes: ["price"]
+                }
+            ]
         });
 
         res.status(200).json({

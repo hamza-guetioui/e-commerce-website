@@ -1,6 +1,6 @@
 
 .card {
-  @apply relative w-44 min-w-44 h-64 rounded-lg bg-slate-50 overflow-hidden;
+  @apply relative shadow-lg w-44 min-w-44 h-64 rounded-lg bg-slate-50 overflow-hidden;
 }
 
 .image {
@@ -13,7 +13,7 @@
 
 
 .name {
-  @apply text-base font-extrabold;
+  @apply text-base font-extrabold text-slate-950;
 }
 
 .description {
@@ -21,7 +21,7 @@
 }
 
 .price {
-  @apply text-sm font-extrabold;
+  @apply text-sm font-extrabold text-slate-900;
 }
 
 .heartIcon {

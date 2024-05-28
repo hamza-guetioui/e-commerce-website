@@ -8,7 +8,7 @@ function index(req, res) {
         return res.status(400).send("Missing imageSrc parameter");
     }
 
-    const imagePath = path.resolve('public/images', imageSrc);
+    const imagePath = path.resolve('public/uploads', imageSrc);
 
     if (fs.existsSync(imagePath)) {
         res.sendFile(imagePath);

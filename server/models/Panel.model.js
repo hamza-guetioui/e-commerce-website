@@ -53,7 +53,7 @@ const Panel = sequelize.define('Panel', {
 
 
 // PanelTypes, Panel => Many-to-One
-PanelTypes.hasMany(Panel, { foreignKey: { allowNull: false }, onDelete: 'CASCADE' })
-Panel.belongsTo(PanelTypes, { foreignKey: { allowNull: false }, onDelete: 'CASCADE' })
+PanelTypes.hasMany(Panel, { foreignKey: 'panelTypeId', onDelete: 'CASCADE' });
+Panel.belongsTo(PanelTypes, { foreignKey: 'panelTypeId', onDelete: 'CASCADE', as: 'type' });
 
 module.exports = Panel

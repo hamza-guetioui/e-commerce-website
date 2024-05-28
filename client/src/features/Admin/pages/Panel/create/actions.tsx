@@ -1,5 +1,7 @@
 "use server";
+import { revalidateTag } from 'next/cache'
 
+  
 export async function createPanel(formData: FormData) {
   "use server";
   try {
@@ -14,6 +16,7 @@ export async function createPanel(formData: FormData) {
     if (response.ok) {
       console.log("Panel created successfully");
     }
+    revalidateTag('panels')
   } catch (error) {
     console.error("Error creating panel:", error);
   }
