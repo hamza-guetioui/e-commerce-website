@@ -16,6 +16,8 @@ const Panel = sequelize.define('Panel', {
                 args: /^[a-zA-Z]+[a-zA-Z0-9\s]*$/,
                 msg: "Panel title must contain only letters, numbers, and spaces."
             },
+            notNull: { msg: 'Panel title is required.' },
+            notEmpty: { msg: 'Panel title cannot be empty.' },
         }
     },
     description: {

@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import styles from "../Styles.module.css";
+import styles from "./Styles.module.css";
 import Slide from "./Slide";
 // swiper setUp
 import { Swiper, SwiperSlide } from "swiper/react";

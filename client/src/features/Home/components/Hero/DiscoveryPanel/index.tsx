@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../Styles.module.css";
+import styles from "./Styles.module.css";
 
 import Discovery from "./Discovery";
 
@@ -32,12 +32,26 @@ const discoveryData = [
   },
 ];
 
-// const getDiscoveryData = async ()=>{
-//   const response = await fetch()
-// }
+const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+
+// const getDiscovery = async () => {
+//   try {
+//     const response = await fetch(`${apiUrl}/panels?type=discovery&limit=2`, {
+//       next: { tags: ["panels"] },
+//     });
+
+//     if (!response.ok){
+//       throw new Error(response.statusText);
+//     } 
+//     const { data } = await response.json();
+//     return data;
+//   } catch (error) {
+//     throw error;
+//   }
+// };
 
 async function DiscoveryPanel() {
-  // const discoveryData = await getDiscoveryData()
+  // const discoveryData = await getDiscovery()
 
   return (
     <div className={styles.discoveryPanel}>

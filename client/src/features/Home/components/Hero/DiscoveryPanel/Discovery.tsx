@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import styles from "../Styles.module.css";
+import styles from "./Styles.module.css";
 
 // TypeScript
 interface DiscoveryProps {

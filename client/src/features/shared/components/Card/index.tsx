@@ -9,7 +9,7 @@ import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 
 // TypeScript
 interface CardProps {
-  id: number;
+  id: number; 
   name: string;
   image: string;
   description?: string | JSX.Element;

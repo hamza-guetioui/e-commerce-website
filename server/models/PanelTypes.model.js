@@ -14,7 +14,7 @@ const PanelTypes = sequelize.define("panelType", {
         validate: {
             is: {
                 args: /^[a-zA-Z]+[a-zA-Z\s]*$/,
-                msg: "Color name can only contain letters."
+                msg: "type name can only contain letters."
             }
         }
     },

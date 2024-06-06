@@ -82,12 +82,11 @@ async function destroy(req, res) {
         }
 
         await panel.destroy()
-        res.status(200).json(success(`The Panel Was Deleted uccessfully`));
+        res.status(200).json(success(`The Panel Was Deleted successfully`));
     } catch (err) {
         res.status(500).json(error(err.toString()))
     }
 }
-
 
 module.exports = {
     index,
