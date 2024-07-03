@@ -1,19 +1,18 @@
 import React from "react";
-
 import Logo from "./Logo";
 import Navigation from "./Navigation";
-import UserTools from "./UserTools";
+import UserTool from "./UserTool";
 
 import styles from "./Styles.module.css";
 
-function Navbar() {
+function index() {
   return (
-    <nav className={styles.navbar}>
+    <div className={styles.container}>
       <Logo />
-      <Navigation />
-      <UserTools />
-    </nav>
+      <Navigation/>
+      <UserTool />
+    </div>
   );
 }
 
-export default Navbar;
+export default index;

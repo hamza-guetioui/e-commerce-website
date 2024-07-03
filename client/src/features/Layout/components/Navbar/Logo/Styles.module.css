@@ -1,0 +1,16 @@
+.logoFont {
+    font-family: cursive;
+    font-size: 1.25rem ;
+    line-height: 1.75rem;
+    font-weight: 600;
+  }
+  /* .container {
+    @apply flex items-center gap-1 basis-full order-2 md:order-1 md:basis-auto;
+  } */
+  .container {
+    @apply flex items-center justify-center gap-1 order-2
+      md:basis-auto md:order-1 md:ml-4;
+  }
+  .image{
+    @apply rounded;
+  }

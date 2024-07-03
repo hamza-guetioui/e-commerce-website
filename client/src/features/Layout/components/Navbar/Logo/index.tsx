@@ -1,16 +1,21 @@
 import React from "react";
-import styles from "../Styles.module.css"
+import styles from "./Styles.module.css";
+import Image from "next/image";
+
 
 function index() {
   return (
-    <div className="text-center basis-full order-2 md:order-1 md:basis-auto">
-      {/* <Image src="/assests/logo.jpg" alt="logo" width={30} height={30} className=" mr-1 rounded" /> */}
-      <span className={`text-2xl font-semibold font-cursive [word-spacing:-5px] ${ styles.logoFont}`}>
-        Bab Shop
-      </span>
+    <div className={styles.container}>
+      {/* <Image
+        src="/assests/logo.jpg"
+        className={styles.image}
+        width={30}
+        height={30}
+        alt="logo"
+      /> */}
+      <span className={styles.logoFont}>GUETIX</span>
     </div>
   );
 }
-
 
 export default index;

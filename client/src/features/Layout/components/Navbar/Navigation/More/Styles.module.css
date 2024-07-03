@@ -1,0 +1,12 @@
+
+  .dropMenu {
+    @apply absolute top-0 left-full w-[calc(100%+1rem)] hidden rounded-md  bg-slate-300/95 
+    md:top-[94%] md:left-4 md:w-56;
+  }
+  .more_opt {
+    @apply relative p-2 border-b last:border-none;
+  }
+  
+  .btn {
+    @apply flex items-center gap-1 
+  }

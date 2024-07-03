@@ -47,7 +47,7 @@ const Panel = sequelize.define('Panel', {
     panelTypeId: {
         type: DataTypes.INTEGER,
         allowNull: false
-    }
+    } 
 }, {
     timestamps: true,
     paranoid: true

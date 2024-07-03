@@ -1,8 +1,13 @@
-/* categories Section Styles */
-.categories {
-  @apply border rounded-lg  h-fit p-2 bg-slate-300/95
+.container {
+  @apply relative md:bg-slate-400/20
+   md:hover:bg-slate-400/60 md:shadow-inner md:rounded-[3rem] md:p-2;
 }
-.parentCategory {
+.categoriesMenu {
+  @apply absolute  w-[calc(100%+1rem)] top-0 left-full hidden border p-2 rounded-md  bg-slate-300/95
+  md:top-[93%] md:left-8 md:w-56;
+}
+
+.pCategory {
   @apply text-sm font-bold ml-3 border-b border-red-950;
 }
 .category {
@@ -11,12 +16,6 @@
       lg:mx-4 lg:p-1;
 }
 
-.link {
-  @apply flex items-center hover:underline font-bold
-       sm:mx-2 
-       md:justify-start 
-       lg:mx-4;
-}
-.linkWrapper {
-  @apply relative p-3 border-b last:border-none md:p-0 md:border-none;
+.btn {
+  @apply flex items-center gap-1;
 }

@@ -49,8 +49,9 @@ async function store(req, res) {
 }
 
 async function show(req, res) {
+    const productId = req.params.id
     try {
-        const products = await Product.findAll();
+        const products = await Product.findByid(productId);
         res.status(200).json({
             status: "success",
             message: "Retrieved categories successfully",

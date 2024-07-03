@@ -1,0 +1,43 @@
+
+.sectionScrollBtn {
+  @apply flex justify-center items-center border-2 border-black p-2 rounded-full w-8 h-8
+    lg:w-10 lg:h-10;
+}
+
+ /* Intro Component styles */
+
+ 
+.intro {
+  @apply min-w-36 md:w-64 md:min-w-64 p-4 mr-2 sm:mr-4 ;
+}
+.head {
+  @apply leading-7 font-bold mb-4 block text-3xl md:text-4xl;
+}
+.subTitle {
+  @apply block text-sm md:text-base;
+}
+.description {
+  @apply text-xs md:text-base font-normal mb-4 line-clamp-3;
+}
+
+ /* Stories Section Cards stylesheet */
+ .storiesShowcase {
+  @apply flex items-center overflow-x-scroll md:overflow-x-hidden scroll-smooth
+ }
+.card {
+    @apply w-48 min-w-48 h-full mr-8 relative;
+  }
+  .image {
+    @apply object-cover object-top w-full max-w-full h-full ;
+  }
+  .content {
+    @apply absolute left-4 -right-4 bottom-0 bg-slate-100 p-2 shadow-md ;
+  }
+  .title {
+    @apply font-black mb-2 text-base;
+  }
+  .description {
+    @apply text-xs;
+  }
+  
+ 

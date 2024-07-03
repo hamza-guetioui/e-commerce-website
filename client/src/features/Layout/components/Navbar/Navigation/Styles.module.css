@@ -1,0 +1,21 @@
+.container {
+  @apply font-semibold absolute z-40 bg-[#c8d1de] left-7 w-52 p-2
+  md:bg-transparent md:w-auto md:p-0 md:static
+  md:flex md:items-center md:gap-7;
+}
+
+.item {
+  @apply hover:underline p-2 border-b last:border-none md:p-0 md:border-none;
+}
+
+.toggleBtn {
+  @apply relative text-center text-2xl ml-5 mr-5 pl-1 pr-1
+    md:hidden;
+}
+.open {
+  @apply after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 
+  after:-translate-y-1/2 after:bg-slate-400/30 after:rounded-full after:w-9 after:h-9;
+}
+.close {
+  @apply bg-none rounded-full; 
+}
